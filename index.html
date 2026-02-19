@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP Factory — Certification Exam Apps</title>
+    <meta name="description" content="APP Factory builds high-quality certification exam preparation apps. Pass your exams with confidence.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0c;
+            --bg-card: #131318;
+            --bg-card-hover: #1a1a22;
+            --text: #e8e6e3;
+            --text-muted: #8a8692;
+            --accent: #6ee7b7;
+            --accent-dim: #2d6a52;
+            --accent-glow: rgba(110, 231, 183, 0.08);
+            --border: #1e1e26;
+            --radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ---- NAV ---- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10,10,12,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .logo {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: var(--accent); }
+
+        /* ---- HERO ---- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            background: var(--bg-card);
+        }
+        .hero-badge .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            max-width: 800px;
+            margin-bottom: 1.5rem;
+        }
+        h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 520px;
+            margin-bottom: 2.5rem;
+        }
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn {
+            padding: 0.85rem 2rem;
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #0a0a0c;
+        }
+        .btn-primary:hover {
+            background: #85f0ca;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(110,231,183,0.2);
+        }
+        .btn-ghost {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-ghost:hover {
+            border-color: var(--accent-dim);
+            background: var(--accent-glow);
+        }
+
+        /* ---- APPS SECTION ---- */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+        h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 3rem;
+        }
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .app-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .app-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent-dim);
+            transform: translateY(-4px);
+        }
+        .app-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .app-card:hover::after { opacity: 1; }
+        .app-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .app-icon.hunting { background: linear-gradient(135deg, #2d5a27, #4a8c3f); }
+        .app-icon.drone { background: linear-gradient(135deg, #1e3a5f, #3b7dd8); }
+        .app-card h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .app-card .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.25rem 0.65rem;
+            border-radius: 100px;
+            background: var(--accent-glow);
+            color: var(--accent);
+            border: 1px solid var(--accent-dim);
+            margin-bottom: 1rem;
+        }
+        .app-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .app-links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 0.75rem;
+        }
+        .store-badge {
+            height: 40px;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+        .store-badge:hover { opacity: 1; }
+
+        /* ---- ABOUT ---- */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .stat {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            text-align: center;
+        }
+        .stat-number {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2.5rem;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.35rem;
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ---- CONTACT ---- */
+        .contact-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 3rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-box h2 { margin-bottom: 1rem; }
+        .contact-box p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        .contact-email {
+            font-size: 1.2rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--accent-dim);
+            padding-bottom: 2px;
+            transition: border-color 0.2s;
+        }
+        .contact-email:hover { border-color: var(--accent); }
+
+        /* ---- FOOTER ---- */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        footer a:hover { color: var(--accent); }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ---- PRIVACY PAGE (toggled via JS) ---- */
+        .privacy-page {
+            display: none;
+            padding: 8rem 2rem 4rem;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .privacy-page.active { display: block; }
+        .privacy-page h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .privacy-page .updated {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 3rem;
+        }
+        .privacy-page h2 {
+            font-size: 1.3rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .privacy-page p, .privacy-page li {
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+        .privacy-page ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        /* ---- MAIN WRAPPER ---- */
+        .main-content { }
+        .main-content.hidden { display: none; }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .apps-grid { grid-template-columns: 1fr; }
+            section { padding: 4rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" class="logo" onclick="showMain()">APP <span>Factory</span></a>
+    <ul>
+        <li><a href="#apps" onclick="showMain()">Apps</a></li>
+        <li><a href="#contact" onclick="showMain()">Contact</a></li>
+        <li><a href="#" onclick="showPrivacy()">Privacy</a></li>
+    </ul>
+</nav>
+
+<!-- ========== MAIN CONTENT ========== -->
+<div class="main-content" id="mainContent">
+
+    <header class="hero">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            Building apps that help people pass
+        </div>
+        <h1>Certification exams, <em>simplified</em></h1>
+        <p>APP Factory builds focused, high-quality exam preparation apps for professional certifications across Europe.</p>
+        <div class="hero-cta">
+            <a href="#apps" class="btn btn-primary">View our apps</a>
+            <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+    </header>
+
+    <section id="apps">
+        <div class="section-label">Our Apps</div>
+        <h2>Built to help you pass</h2>
+        <div class="apps-grid">
+
+            <div class="app-card">
+                <div class="app-icon hunting">🦌</div>
+                <span class="tag">Denmark</span>
+                <h3>Bestå Jagttegn</h3>
+                <p>Complete preparation for the Danish hunting license exam. 500+ questions covering wildlife, weapons, safety, and regulations.</p>
+                <div class="app-links">
+                    <!-- Replace # with actual store links -->
+                    <a href="#" title="App Store"><img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store"></a>
+                    <a href="#" title="Google Play"><img class="store-badge" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play"></a>
+                </div>
+            </div>
+
+            <div class="app-card">
+                <div class="app-icon drone">✈️</div>
+                <span class="tag">EU / EASA</span>
+                <h3>Drone Pilot Exam — A1/A3</h3>
+                <p>EASA-compliant preparation for the Open Category A1/A3 drone pilot certificate. Available in multiple European languages.</p>
+                <div class="app-links">
+                    <a href="#" title="App Store"><img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store"></a>
+                    <a href="#" title="Google Play"><img class="store-badge" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play"></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section id="contact">
+        <div class="contact-box">
+            <div class="section-label">Contact</div>
+            <h2>Get in touch</h2>
+            <p>Questions, feedback, or partnership inquiries — we'd love to hear from you.</p>
+            <a href="mailto:sprutski@icloud.com" class="contact-email">sprutski@icloud.com</a>
+        </div>
+    </section>
+
+</div>
+
+<!-- ========== PRIVACY POLICY PAGE ========== -->
+<div class="privacy-page" id="privacyPage">
+    <a href="#" class="back-link" onclick="showMain()">← Back to home</a>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: February 19, 2026</p>
+
+    <h2>Introduction</h2>
+    <p>APP Factory ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile applications.</p>
+
+    <h2>Information We Collect</h2>
+    <p>Our apps are designed with privacy in mind. We collect minimal data:</p>
+    <ul>
+        <li><strong>Usage data:</strong> Anonymous quiz progress and statistics stored locally on your device. This data is not transmitted to our servers.</li>
+        <li><strong>Purchase information:</strong> If you make an in-app purchase, the transaction is processed by Apple (App Store) or Google (Google Play). We do not collect or store your payment details.</li>
+        <li><strong>Analytics:</strong> We may use anonymised, aggregated analytics to improve app performance and content quality. No personally identifiable information is collected.</li>
+    </ul>
+
+    <h2>Data Storage</h2>
+    <p>Your quiz progress, scores, and preferences are stored locally on your device. We do not operate user accounts, and we do not store personal data on external servers.</p>
+
+    <h2>Third-Party Services</h2>
+    <p>Our apps may use the following third-party services:</p>
+    <ul>
+        <li><strong>Apple App Store / Google Play Store:</strong> For app distribution and in-app purchases. Subject to their respective privacy policies.</li>
+        <li><strong>RevenueCat:</strong> For managing in-app subscriptions and purchases. RevenueCat processes anonymous transaction data. See <a href="https://www.revenuecat.com/privacy/" style="color: var(--accent);">RevenueCat's Privacy Policy</a>.</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>Our apps are not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
+
+    <h2>Data Sharing</h2>
+    <p>We do not sell, trade, or transfer your personal information to third parties. We do not serve advertisements in our apps.</p>
+
+    <h2>Your Rights</h2>
+    <p>Under GDPR and applicable EU data protection laws, you have the right to:</p>
+    <ul>
+        <li>Access any personal data we hold about you</li>
+        <li>Request deletion of your data</li>
+        <li>Object to data processing</li>
+        <li>Lodge a complaint with a supervisory authority</li>
+    </ul>
+    <p>Since we store data locally on your device, you can delete all app data by uninstalling the application.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Changes will be posted within the app and on this page with an updated revision date.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have questions about this Privacy Policy, please contact us at:</p>
+    <p><a href="mailto:sprutski@icloud.com" style="color: var(--accent);">sprutski@icloud.com</a></p>
+    <p style="margin-top: 2rem;">APP Factory<br>Denmark</p>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="#" onclick="showPrivacy()">Privacy Policy</a>
+        <a href="#contact" onclick="showMain()">Contact</a>
+    </div>
+    <p>&copy; 2026 APP Factory. All rights reserved.</p>
+</footer>
+
+<script>
+    function showPrivacy() {
+        document.getElementById('mainContent').classList.add('hidden');
+        document.getElementById('privacyPage').classList.add('active');
+        window.scrollTo(0, 0);
+    }
+    function showMain() {
+        document.getElementById('mainContent').classList.remove('hidden');
+        document.getElementById('privacyPage').classList.remove('active');
+    }
+</script>
+
+</body>
+</html>
