@@ -104,12 +104,13 @@
         .nav-logo-icon {
             width: 36px;
             height: 36px;
-            background: linear-gradient(135deg, var(--navy-light), var(--sky));
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
+            overflow: hidden;
+        }
+        .nav-logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .nav-logo-text {
             font-family: 'Fraunces', serif;
@@ -655,7 +656,7 @@
 
 <nav>
     <a href="#" class="nav-logo" onclick="showMain()">
-        <div class="nav-logo-icon">✈</div>
+        <div class="nav-logo-icon"><img src="logo.jpg" alt="DronePilot logo"></div>
         <div class="nav-logo-text">Drone<span>Pilot</span></div>
     </a>
     <ul class="nav-links" id="navLinks">
@@ -723,14 +724,13 @@
                 <h3>DronePilot A1/A3</h3>
                 <p>Your first step as an EU drone pilot. Comprehensive preparation for the EASA Open Category A1/A3 certificate of competence — required for all drone operators.</p>
                 <div class="app-card-features">
-                    <span class="feature-pill">300+ questions</span>
                     <span class="feature-pill">Exam simulation</span>
                     <span class="feature-pill">5 languages</span>
                     <span class="feature-pill">VLOS & meteorology</span>
                 </div>
                 <div class="store-links">
-                    <a href="#"><img class="store-btn" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download DronePilot A1/A3 on App Store"></a>
-                    <a href="#"><img class="store-btn" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get DronePilot A1/A3 on Google Play"></a>
+                    <a href="https://apps.apple.com/app/id6758833683" target="_blank"><img class="store-btn" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download DronePilot A1/A3 on App Store"></a>
+                    <!-- <a href="#" target="_blank"><img class="store-btn" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get DronePilot A1/A3 on Google Play"></a> -->
                 </div>
             </div>
 
@@ -739,14 +739,13 @@
                 <h3>DronePilot A2</h3>
                 <p>Ready to fly closer to people? Prepare for the EASA A2 certificate of competency — covering the 1:1 rule, C2 drones, low-speed mode, and ground risk mitigation.</p>
                 <div class="app-card-features">
-                    <span class="feature-pill">200+ questions</span>
                     <span class="feature-pill">Exam simulation</span>
                     <span class="feature-pill">5 languages</span>
                     <span class="feature-pill">1:1 rule & C2 specs</span>
                 </div>
                 <div class="store-links">
-                    <a href="#"><img class="store-btn" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download DronePilot A2 on App Store"></a>
-                    <a href="#"><img class="store-btn" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get DronePilot A2 on Google Play"></a>
+                    <a href="https://apps.apple.com/app/id6759554282" target="_blank"><img class="store-btn" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download DronePilot A2 on App Store"></a>
+                    <!-- <a href="#" target="_blank"><img class="store-btn" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get DronePilot A2 on Google Play"></a> -->
                 </div>
             </div>
         </div>
@@ -862,7 +861,7 @@
             <p style="color: var(--grey); margin-bottom: 2rem; max-width: 420px; margin-left: auto; margin-right: auto;">Download DronePilot and try 5 questions per day — completely free. No account needed, no credit card required.</p>
             <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
                 <a href="#apps" class="btn btn-amber">↓ Download Free</a>
-                <a href="mailto:sprutski@icloud.com" class="btn btn-outline">Contact us</a>
+                <a href="/cdn-cgi/l/email-protection#23505351565750484a634a404f4c56470d404c4e" class="btn btn-outline">Contact us</a>
             </div>
         </div>
     </div>
@@ -899,7 +898,7 @@
     <h2>Changes to This Policy</h2>
     <p>We may update this Privacy Policy from time to time. Changes will be posted within the app and on this page.</p>
     <h2>Contact Us</h2>
-    <p>Questions? Contact us at <a href="mailto:sprutski@icloud.com">sprutski@icloud.com</a></p>
+    <p>Questions? Contact us at <a href="/cdn-cgi/l/email-protection#81f2f1f3f4f5f2eae8c1e8e2edeef4e5afe2eeec"><span class="__cf_email__" data-cfemail="443734363130372f2d042d27282b31206a272b29">[email&#160;protected]</span></a></p>
     <p style="margin-top: 2rem;">APP Factory · Denmark</p>
 </div>
 
@@ -908,7 +907,7 @@
     <div class="footer-grid">
         <div class="footer-brand">
             <div class="nav-logo" style="margin-bottom: 0.5rem;">
-                <div class="nav-logo-icon">✈</div>
+                <div class="nav-logo-icon"><img src="logo.jpg" alt="DronePilot logo"></div>
                 <div class="nav-logo-text">Drone<span>Pilot</span></div>
             </div>
             <p>High-quality exam preparation apps for EASA drone certifications. Built in Denmark, used across Europe.</p>
@@ -925,7 +924,7 @@
         </div>
         <div class="footer-col">
             <h4>Company</h4>
-            <a href="mailto:sprutski@icloud.com">Contact</a>
+            <a href="/cdn-cgi/l/email-protection#d9aaa9abacadaab2b099b0bab5b6acbdf7bab6b4">Contact</a>
             <a href="#" onclick="showPrivacy()">Privacy Policy</a>
         </div>
     </div>
@@ -935,7 +934,7 @@
     </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     function showPrivacy() {
         document.getElementById('mainContent').classList.add('hidden');
         document.getElementById('privacyPage').classList.add('active');
@@ -955,15 +954,3 @@
         document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
         document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('active'));
         if (!isOpen) {
-            answer.classList.add('open');
-            btn.classList.add('active');
-        }
-    }
-    // Close mobile menu on link click
-    document.querySelectorAll('.nav-links a').forEach(a => {
-        a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
-    });
-</script>
-
-</body>
-</html>
