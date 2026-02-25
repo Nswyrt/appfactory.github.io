@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EASA Drone Exam Guides & Tips | DronePilot Blog</title>
+    <meta name="description" content="Free guides, study tips, and exam preparation resources for EASA A1/A3 and A2 drone pilot certificates. Available in English and German.">
+    <meta name="keywords" content="EASA drone exam guide, drone license tips, A1/A3 study guide, A2 exam preparation, Drohnenführerschein">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dronepilotapp.eu/blog/">
+
+    <meta property="og:title" content="EASA Drone Exam Guides & Tips | DronePilot">
+    <meta property="og:description" content="Free guides and study tips for EASA A1/A3 and A2 drone certificates.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dronepilotapp.eu/blog/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "DronePilot Exam Guides",
+        "description": "Free guides and tips for EASA drone pilot exams.",
+        "url": "https://dronepilotapp.eu/blog/"
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #1a2340;
+            --navy-deep: #0f1628;
+            --navy-light: #243054;
+            --amber: #d4943a;
+            --amber-light: #f0be6e;
+            --amber-glow: rgba(212, 148, 58, 0.1);
+            --sky: #5b8fd9;
+            --white: #f4f2ef;
+            --white-dim: #c8c4be;
+            --grey: #8a8693;
+            --surface: #1e2a45;
+            --border: rgba(255,255,255,0.06);
+            --border-light: rgba(255,255,255,0.1);
+            --radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--navy-deep);
+            color: var(--white);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(15, 22, 40, 0.85);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 0.6rem;
+            text-decoration: none; color: var(--white);
+        }
+        .nav-logo-icon { width: 36px; height: 36px; border-radius: 10px; overflow: hidden; }
+        .nav-logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+        .nav-logo-text {
+            font-family: 'Fraunces', serif; font-size: 1.3rem;
+            font-weight: 600; letter-spacing: -0.02em;
+        }
+        .nav-logo-text span { color: var(--amber); }
+        .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
+        .nav-links a {
+            color: var(--white-dim); text-decoration: none;
+            font-size: 0.88rem; font-weight: 500; transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--amber-light); }
+        .nav-cta {
+            padding: 0.55rem 1.4rem !important; background: var(--amber) !important;
+            color: var(--navy-deep) !important; border-radius: 100px !important;
+            font-weight: 600 !important; transition: all 0.25s !important;
+        }
+        .nav-cta:hover { background: var(--amber-light) !important; }
+
+        .page-header {
+            max-width: 900px; margin: 0 auto;
+            padding: 8rem 2rem 3rem;
+        }
+        .page-header .breadcrumb {
+            font-size: 0.82rem; color: var(--grey); margin-bottom: 2rem;
+        }
+        .page-header .breadcrumb a { color: var(--amber); text-decoration: none; }
+        .page-header .breadcrumb a:hover { text-decoration: underline; }
+        .page-header h1 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            font-weight: 400; letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+        .page-header p {
+            font-size: 1.1rem; color: var(--white-dim);
+            max-width: 600px;
+        }
+
+        .blog-section {
+            max-width: 900px; margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+        .blog-section-label {
+            font-size: 0.78rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.12em;
+            color: var(--amber); margin-bottom: 1.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
+        }
+        .blog-section-label:first-child { border-top: none; padding-top: 0; }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-card {
+            background: var(--surface);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            border-color: var(--amber);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+        }
+
+        .blog-card-tags {
+            display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;
+        }
+        .blog-card-tag {
+            font-size: 0.7rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            color: var(--amber); background: var(--amber-glow);
+            padding: 0.25rem 0.75rem; border-radius: 100px;
+        }
+        .blog-card-tag.lang {
+            color: var(--sky); background: rgba(91, 143, 217, 0.1);
+        }
+
+        .blog-card h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.2rem; font-weight: 400;
+            line-height: 1.35; margin-bottom: 0.75rem;
+            flex-grow: 0;
+        }
+
+        .blog-card p {
+            font-size: 0.88rem; color: var(--white-dim);
+            line-height: 1.6; flex-grow: 1;
+        }
+
+        .blog-card-meta {
+            font-size: 0.78rem; color: var(--grey);
+            margin-top: 1rem; padding-top: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .cta-banner {
+            max-width: 900px; margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+        .cta-banner-inner {
+            background: linear-gradient(135deg, var(--navy-light), var(--surface));
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            padding: 3rem; text-align: center;
+        }
+        .cta-banner h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem; font-weight: 400;
+            margin-bottom: 0.75rem;
+        }
+        .cta-banner p {
+            font-size: 0.95rem; color: var(--white-dim);
+            margin-bottom: 1.5rem;
+        }
+        .cta-buttons { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            padding: 0.85rem 2rem; border-radius: 100px;
+            font-size: 0.95rem; font-weight: 600;
+            text-decoration: none; transition: all 0.25s;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-amber { background: var(--amber); color: var(--navy-deep); }
+        .btn-amber:hover {
+            background: var(--amber-light); transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(212,148,58,0.25);
+        }
+        .btn-outline {
+            background: transparent; color: var(--white);
+            border: 1px solid var(--border-light);
+        }
+        .btn-outline:hover { border-color: var(--amber); background: var(--amber-glow); }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 2rem; text-align: center;
+            font-size: 0.85rem; color: var(--grey);
+            max-width: 900px; margin: 0 auto;
+        }
+        footer a { color: var(--grey); text-decoration: none; }
+        footer a:hover { color: var(--amber-light); }
+
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .page-header { padding: 6rem 1.25rem 2rem; }
+            .blog-section { padding: 0 1.25rem 3rem; }
+            .blog-grid { grid-template-columns: 1fr; }
+            .cta-banner { padding: 0 1.25rem; }
+            .cta-banner-inner { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="../" class="nav-logo">
+        <div class="nav-logo-icon"><img src="../logo.jpg" alt="DronePilot logo"></div>
+        <div class="nav-logo-text">Drone<span>Pilot</span></div>
+    </a>
+    <ul class="nav-links">
+        <li><a href="../#apps">Apps</a></li>
+        <li><a href="./">Guides</a></li>
+        <li><a href="../#faq">FAQ</a></li>
+        <li><a href="../#apps" class="nav-cta">Download Free</a></li>
+    </ul>
+</nav>
+
+<header class="page-header">
+    <div class="breadcrumb"><a href="../">Home</a> → Exam Guides</div>
+    <h1>Exam Guides</h1>
+    <p>Free study guides and preparation tips for EASA A1/A3 and A2 drone pilot certificates.</p>
+</header>
+
+<main class="blog-section">
+
+    <div class="blog-section-label">English Guides</div>
+
+    <div class="blog-grid">
+
+        <a href="how-to-pass-easa-a1-a3-exam.html" class="blog-card">
+            <div class="blog-card-tags">
+                <span class="blog-card-tag">A1/A3 Certificate</span>
+            </div>
+            <h3>How to Pass the EASA A1/A3 Drone Exam — Beginner's Guide 2026</h3>
+            <p>Your starting point: exam format, all 9 study topics, country-by-country availability, and 5 tips to pass on your first attempt.</p>
+            <div class="blog-card-meta">9 min read · Feb 2026</div>
+        </a>
+
+        <a href="how-to-pass-easa-a2-exam.html" class="blog-card">
+            <div class="blog-card-tags">
+                <span class="blog-card-tag">A2 Certificate</span>
+            </div>
+            <h3>How to Pass the EASA A2 Drone Exam — Complete Guide 2026</h3>
+            <p>Everything you need to know: requirements, exam format, topics covered, and the best way to prepare for the A2 certificate.</p>
+            <div class="blog-card-meta">10 min read · Feb 2026</div>
+        </a>
+
+        <a href="a1-a3-vs-a2-difference.html" class="blog-card">
+            <div class="blog-card-tags">
+                <span class="blog-card-tag">Comparison</span>
+            </div>
+            <h3>EASA A1/A3 vs A2 — What's the Difference and Which Do You Need?</h3>
+            <p>A clear comparison of the two certificates: when you need each one, what they cover, and how to get them.</p>
+            <div class="blog-card-meta">7 min read · Feb 2026</div>
+        </a>
+
+    </div>
+
+    <div class="blog-section-label">Deutsche Guides</div>
+
+    <div class="blog-grid">
+
+        <a href="drohnenfuehrerschein-a2-pruefung-bestehen.html" class="blog-card">
+            <div class="blog-card-tags">
+                <span class="blog-card-tag">A2 Fernpilotenzeugnis</span>
+                <span class="blog-card-tag lang">Deutsch</span>
+            </div>
+            <h3>Drohnenführerschein A2: So bestehst du die Prüfung beim ersten Mal</h3>
+            <p>Alles was du brauchst: Prüfungsformat, Themengebiete, Lerntipps und wo du die Prüfung in Deutschland ablegen kannst.</p>
+            <div class="blog-card-meta">10 Min. Lesezeit · Feb 2026</div>
+        </a>
+
+    </div>
+
+</main>
+
+<div class="cta-banner">
+    <div class="cta-banner-inner">
+        <h2>Ready to start practicing?</h2>
+        <p>500+ realistic exam questions with detailed explanations. Simulate the real exam or study by topic — available in 5 languages.</p>
+        <div class="cta-buttons">
+            <a href="https://apps.apple.com/app/id6758833683" class="btn btn-amber" target="_blank">DronePilot A1/A3</a>
+            <a href="https://apps.apple.com/app/id6759554282" class="btn btn-outline" target="_blank">DronePilot A2</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><a href="../">← Back to DronePilot</a></p>
+    <p style="margin-top: 1rem;">© 2026 APP Factory. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
