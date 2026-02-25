@@ -662,7 +662,7 @@
     <ul class="nav-links" id="navLinks">
         <li><a href="#apps" onclick="showMain()">Apps</a></li>
         <li><a href="#features" onclick="showMain()">Features</a></li>
-        <li><a href="#blog" onclick="showMain()">Guides</a></li>
+        <li><a href="blog/">Guides</a></li>
         <li><a href="#faq" onclick="showMain()">FAQ</a></li>
         <li><a href="#apps" class="nav-cta" onclick="showMain()">Download Free</a></li>
     </ul>
@@ -818,7 +818,7 @@
             </a>
         </div>
         <div style="text-align:center; margin-top:1.5rem;">
-            <a href="blog/" style="color:var(--amber); text-decoration:none; font-size:0.95rem; font-weight:500;">View all guides (including German) →</a>
+            <a href="blog/" style="color:var(--amber); text-decoration:none; font-size:0.95rem; font-weight:500;">View all guides →</a>
         </div>
     </section>
 
@@ -864,7 +864,7 @@
             <p style="color: var(--grey); margin-bottom: 2rem; max-width: 420px; margin-left: auto; margin-right: auto;">Download DronePilot and try 5 questions per day — completely free. No account needed, no credit card required.</p>
             <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
                 <a href="#apps" class="btn btn-amber">↓ Download Free</a>
-                <a href="/cdn-cgi/l/email-protection#23505351565750484a634a404f4c56470d404c4e" class="btn btn-outline">Contact us</a>
+                <a href="mailto:hello@appfactory.dk" class="btn btn-outline">Contact us</a>
             </div>
         </div>
     </div>
@@ -901,7 +901,7 @@
     <h2>Changes to This Policy</h2>
     <p>We may update this Privacy Policy from time to time. Changes will be posted within the app and on this page.</p>
     <h2>Contact Us</h2>
-    <p>Questions? Contact us at <a href="/cdn-cgi/l/email-protection#81f2f1f3f4f5f2eae8c1e8e2edeef4e5afe2eeec"><span class="__cf_email__" data-cfemail="443734363130372f2d042d27282b31206a272b29">[email&#160;protected]</span></a></p>
+    <p>Questions? Contact us at <a href="mailto:hello@appfactory.dk">hello@appfactory.dk</a></p>
     <p style="margin-top: 2rem;">APP Factory · Denmark</p>
 </div>
 
@@ -922,12 +922,12 @@
         </div>
         <div class="footer-col">
             <h4>Resources</h4>
-            <a href="#blog" onclick="showMain()">Exam Guides</a>
+            <a href="blog/">Exam Guides</a>
             <a href="#faq" onclick="showMain()">FAQ</a>
         </div>
         <div class="footer-col">
             <h4>Company</h4>
-            <a href="/cdn-cgi/l/email-protection#d9aaa9abacadaab2b099b0bab5b6acbdf7bab6b4">Contact</a>
+            <a href="mailto:hello@appfactory.dk">Contact</a>
             <a href="#" onclick="showPrivacy()">Privacy Policy</a>
         </div>
     </div>
@@ -937,7 +937,7 @@
     </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
     function showPrivacy() {
         document.getElementById('mainContent').classList.add('hidden');
         document.getElementById('privacyPage').classList.add('active');
@@ -957,3 +957,10 @@
         document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
         document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('active'));
         if (!isOpen) {
+            answer.classList.add('open');
+            btn.classList.add('active');
+        }
+    }
+</script>
+</body>
+</html>
