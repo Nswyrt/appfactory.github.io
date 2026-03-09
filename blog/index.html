@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EASA Drone Exam Guides & Tips | DronePilot Blog</title>
-    <meta name="description" content="Free guides, study tips, and exam preparation resources for EASA A1/A3 and A2 drone pilot certificates. Available in English and German.">
-    <meta name="keywords" content="EASA drone exam guide, drone license tips, A1/A3 study guide, A2 exam preparation, Drohnenführerschein">
+    <meta name="description" content="Free guides, study tips, and exam preparation resources for EASA A1/A3 and A2 drone pilot certificates. Available in English, German, French, Spanish, Italian, and Dutch.">
+    <meta name="keywords" content="EASA drone exam guide, drone license tips, A1/A3 study guide, A2 exam preparation, Drohnenführerschein, drone examen">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://dronepilotapp.eu/blog/">
 
@@ -29,196 +29,55 @@
 
     <style>
         :root {
-            --navy: #1a2340;
-            --navy-deep: #0f1628;
-            --navy-light: #243054;
-            --amber: #d4943a;
-            --amber-light: #f0be6e;
-            --amber-glow: rgba(212, 148, 58, 0.1);
-            --sky: #5b8fd9;
-            --white: #f4f2ef;
-            --white-dim: #c8c4be;
-            --grey: #8a8693;
-            --surface: #1e2a45;
-            --border: rgba(255,255,255,0.06);
-            --border-light: rgba(255,255,255,0.1);
+            --navy: #1a2340; --navy-deep: #0f1628; --navy-light: #243054;
+            --amber: #d4943a; --amber-light: #f0be6e; --amber-glow: rgba(212,148,58,0.1);
+            --sky: #5b8fd9; --white: #f4f2ef; --white-dim: #c8c4be; --grey: #8a8693;
+            --surface: #1e2a45; --border: rgba(255,255,255,0.06); --border-light: rgba(255,255,255,0.1);
             --radius: 16px;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', sans-serif; background: var(--navy-deep); color: var(--white); line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
-        body {
-            font-family: 'Outfit', sans-serif;
-            background: var(--navy-deep);
-            color: var(--white);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        nav {
-            position: fixed; top: 0; width: 100%; z-index: 100;
-            padding: 1rem 2rem;
-            display: flex; justify-content: space-between; align-items: center;
-            background: rgba(15, 22, 40, 0.85);
-            backdrop-filter: blur(24px);
-            border-bottom: 1px solid var(--border);
-        }
-        .nav-logo {
-            display: flex; align-items: center; gap: 0.6rem;
-            text-decoration: none; color: var(--white);
-        }
+        nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(15,22,40,0.85); backdrop-filter: blur(24px); border-bottom: 1px solid var(--border); }
+        .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--white); }
         .nav-logo-icon { width: 36px; height: 36px; border-radius: 10px; overflow: hidden; }
         .nav-logo-icon img { width: 100%; height: 100%; object-fit: cover; }
-        .nav-logo-text {
-            font-family: 'Fraunces', serif; font-size: 1.3rem;
-            font-weight: 600; letter-spacing: -0.02em;
-        }
+        .nav-logo-text { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 600; letter-spacing: -0.02em; }
         .nav-logo-text span { color: var(--amber); }
         .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
-        .nav-links a {
-            color: var(--white-dim); text-decoration: none;
-            font-size: 0.88rem; font-weight: 500; transition: color 0.2s;
-        }
+        .nav-links a { color: var(--white-dim); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
         .nav-links a:hover { color: var(--amber-light); }
-        .nav-cta {
-            padding: 0.55rem 1.4rem !important; background: var(--amber) !important;
-            color: var(--navy-deep) !important; border-radius: 100px !important;
-            font-weight: 600 !important; transition: all 0.25s !important;
-        }
+        .nav-cta { padding: 0.55rem 1.4rem !important; background: var(--amber) !important; color: var(--navy-deep) !important; border-radius: 100px !important; font-weight: 600 !important; transition: all 0.25s !important; }
         .nav-cta:hover { background: var(--amber-light) !important; }
 
-        .page-header {
-            max-width: 900px; margin: 0 auto;
-            padding: 8rem 2rem 3rem;
-        }
-        .page-header .breadcrumb {
-            font-size: 0.82rem; color: var(--grey); margin-bottom: 2rem;
-        }
+        .page-header { max-width: 900px; margin: 0 auto; padding: 8rem 2rem 3rem; }
+        .page-header .breadcrumb { font-size: 0.82rem; color: var(--grey); margin-bottom: 2rem; }
         .page-header .breadcrumb a { color: var(--amber); text-decoration: none; }
         .page-header .breadcrumb a:hover { text-decoration: underline; }
-        .page-header h1 {
-            font-family: 'Fraunces', serif;
-            font-size: clamp(2.2rem, 5vw, 3rem);
-            font-weight: 400; letter-spacing: -0.02em;
-            margin-bottom: 0.75rem;
-        }
-        .page-header p {
-            font-size: 1.1rem; color: var(--white-dim);
-            max-width: 600px;
-        }
+        .page-header h1 { font-family: 'Fraunces', serif; font-size: clamp(2.2rem,5vw,3rem); font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+        .page-header p { font-size: 1.1rem; color: var(--white-dim); max-width: 600px; }
 
-        .blog-section {
-            max-width: 900px; margin: 0 auto;
-            padding: 0 2rem 4rem;
-        }
-        .blog-section-label {
-            font-size: 0.78rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 0.12em;
-            color: var(--amber); margin-bottom: 1.5rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-light);
-        }
+        .blog-section { max-width: 900px; margin: 0 auto; padding: 0 2rem 4rem; }
+        .blog-section-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--amber); margin-bottom: 1.5rem; padding-top: 2rem; border-top: 1px solid var(--border-light); }
         .blog-section-label:first-child { border-top: none; padding-top: 0; }
 
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.25rem;
-            margin-bottom: 3rem;
-        }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+        .blog-card { background: var(--surface); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 2rem; text-decoration: none; color: var(--white); transition: all 0.3s; display: flex; flex-direction: column; }
+        .blog-card:hover { border-color: var(--amber); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+        .blog-card-tags { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .blog-card-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--amber); background: var(--amber-glow); padding: 0.25rem 0.75rem; border-radius: 100px; }
+        .blog-card-tag.lang { color: var(--sky); background: rgba(91,143,217,0.1); }
+        .blog-card h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 400; line-height: 1.35; margin-bottom: 0.75rem; flex-grow: 0; }
+        .blog-card p { font-size: 0.88rem; color: var(--white-dim); line-height: 1.6; flex-grow: 1; }
+        .blog-card-meta { font-size: 0.78rem; color: var(--grey); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
 
-        .blog-card {
-            background: var(--surface);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius);
-            padding: 2rem;
-            text-decoration: none;
-            color: var(--white);
-            transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        .blog-card:hover {
-            border-color: var(--amber);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
-        }
+        .cta-banner { max-width: 900px; margin: 0 auto 4rem; padding: 0 2rem; }
+        .cta-banner-inner { background: linear-gradient(135deg, var(--navy-light), var(--surface)); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 3rem; text-align: center; }
+        .cta-banner h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 0.75rem; }
+        .cta-banner p { font-size: 0.95rem; color: var(--white-dim); margin-bottom: 1.5rem; }
 
-        .blog-card-tags {
-            display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;
-        }
-        .blog-card-tag {
-            font-size: 0.7rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 0.1em;
-            color: var(--amber); background: var(--amber-glow);
-            padding: 0.25rem 0.75rem; border-radius: 100px;
-        }
-        .blog-card-tag.lang {
-            color: var(--sky); background: rgba(91, 143, 217, 0.1);
-        }
-
-        .blog-card h3 {
-            font-family: 'Fraunces', serif;
-            font-size: 1.2rem; font-weight: 400;
-            line-height: 1.35; margin-bottom: 0.75rem;
-            flex-grow: 0;
-        }
-
-        .blog-card p {
-            font-size: 0.88rem; color: var(--white-dim);
-            line-height: 1.6; flex-grow: 1;
-        }
-
-        .blog-card-meta {
-            font-size: 0.78rem; color: var(--grey);
-            margin-top: 1rem; padding-top: 0.75rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .cta-banner {
-            max-width: 900px; margin: 0 auto 4rem;
-            padding: 0 2rem;
-        }
-        .cta-banner-inner {
-            background: linear-gradient(135deg, var(--navy-light), var(--surface));
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius);
-            padding: 3rem; text-align: center;
-        }
-        .cta-banner h2 {
-            font-family: 'Fraunces', serif;
-            font-size: 1.5rem; font-weight: 400;
-            margin-bottom: 0.75rem;
-        }
-        .cta-banner p {
-            font-size: 0.95rem; color: var(--white-dim);
-            margin-bottom: 1.5rem;
-        }
-        .cta-buttons { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
-        .btn {
-            padding: 0.85rem 2rem; border-radius: 100px;
-            font-size: 0.95rem; font-weight: 600;
-            text-decoration: none; transition: all 0.25s;
-            display: inline-flex; align-items: center; gap: 0.5rem;
-        }
-        .btn-amber { background: var(--amber); color: var(--navy-deep); }
-        .btn-amber:hover {
-            background: var(--amber-light); transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(212,148,58,0.25);
-        }
-        .btn-outline {
-            background: transparent; color: var(--white);
-            border: 1px solid var(--border-light);
-        }
-        .btn-outline:hover { border-color: var(--amber); background: var(--amber-glow); }
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 2.5rem 2rem; text-align: center;
-            font-size: 0.85rem; color: var(--grey);
-            max-width: 900px; margin: 0 auto;
-        }
+        footer { border-top: 1px solid var(--border); padding: 2.5rem 2rem; text-align: center; font-size: 0.85rem; color: var(--grey); max-width: 900px; margin: 0 auto; }
         footer a { color: var(--grey); text-decoration: none; }
         footer a:hover { color: var(--amber-light); }
 
@@ -258,7 +117,6 @@
     <div class="blog-section-label">English Guides</div>
 
     <div class="blog-grid">
-
         <a href="how-to-pass-easa-a1-a3-exam.html" class="blog-card">
             <div class="blog-card-tags">
                 <span class="blog-card-tag">A1/A3 Certificate</span>
@@ -267,7 +125,6 @@
             <p>Your starting point: exam format, all 9 study topics, country-by-country availability, and 5 tips to pass on your first attempt.</p>
             <div class="blog-card-meta">9 min read · Feb 2026</div>
         </a>
-
         <a href="how-to-pass-easa-a2-exam.html" class="blog-card">
             <div class="blog-card-tags">
                 <span class="blog-card-tag">A2 Certificate</span>
@@ -276,7 +133,6 @@
             <p>Everything you need to know: requirements, exam format, topics covered, and the best way to prepare for the A2 certificate.</p>
             <div class="blog-card-meta">10 min read · Feb 2026</div>
         </a>
-
         <a href="a1-a3-vs-a2-difference.html" class="blog-card">
             <div class="blog-card-tags">
                 <span class="blog-card-tag">Comparison</span>
@@ -285,23 +141,11 @@
             <p>A clear comparison of the two certificates: when you need each one, what they cover, and how to get them.</p>
             <div class="blog-card-meta">7 min read · Feb 2026</div>
         </a>
-
     </div>
 
     <div class="blog-section-label">Deutsche Guides</div>
 
     <div class="blog-grid">
-
-        <a href="drohnenfuehrerschein-a2-pruefung-bestehen.html" class="blog-card">
-            <div class="blog-card-tags">
-                <span class="blog-card-tag">A2 Fernpilotenzeugnis</span>
-                <span class="blog-card-tag lang">Deutsch</span>
-            </div>
-            <h3>Drohnenführerschein A2: So bestehst du die Prüfung beim ersten Mal</h3>
-            <p>Alles was du brauchst: Prüfungsformat, Themengebiete, Lerntipps und wo du die Prüfung in Deutschland ablegen kannst.</p>
-            <div class="blog-card-meta">10 Min. Lesezeit · Feb 2026</div>
-        </a>
-
         <a href="a1-a3-drohnenpruefung-bestehen.html" class="blog-card">
             <div class="blog-card-tags">
                 <span class="blog-card-tag">A1/A3 Kompetenznachweis</span>
@@ -311,7 +155,15 @@
             <p>Dein Einstieg: Prüfungsformat, alle 9 Themengebiete, Kosten nach Land, und 5 Tipps zum Bestehen beim ersten Anlauf.</p>
             <div class="blog-card-meta">9 Min. Lesezeit · Feb 2026</div>
         </a>
-
+        <a href="drohnenfuehrerschein-a2-pruefung-bestehen.html" class="blog-card">
+            <div class="blog-card-tags">
+                <span class="blog-card-tag">A2 Fernpilotenzeugnis</span>
+                <span class="blog-card-tag lang">Deutsch</span>
+            </div>
+            <h3>Drohnenführerschein A2: So bestehst du die Prüfung beim ersten Mal</h3>
+            <p>Alles was du brauchst: Prüfungsformat, Themengebiete, Lerntipps und wo du die Prüfung in Deutschland ablegen kannst.</p>
+            <div class="blog-card-meta">10 Min. Lesezeit · Feb 2026</div>
+        </a>
         <a href="a1-a3-vs-a2-unterschied.html" class="blog-card">
             <div class="blog-card-tags">
                 <span class="blog-card-tag">Vergleich</span>
@@ -321,13 +173,11 @@
             <p>Klarer Vergleich der beiden Zertifikate: Voraussetzungen, Prüfungsformat, Berechtigungen und Entscheidungshilfe.</p>
             <div class="blog-card-meta">7 Min. Lesezeit · Feb 2026</div>
         </a>
-
     </div>
 
     <div class="blog-section-label">Guides en Français</div>
 
     <div class="blog-grid">
-
         <a href="reussir-examen-drone-a1-a3.html" class="blog-card">
             <div class="blog-card-tags">
                 <span class="blog-card-tag">Attestation A1/A3</span>
@@ -337,7 +187,6 @@
             <p>Votre point de départ : format d'examen, les 9 sujets, coût par pays et 5 conseils pour réussir du premier coup.</p>
             <div class="blog-card-meta">9 min de lecture · Fév 2026</div>
         </a>
-
         <a href="reussir-examen-drone-a2.html" class="blog-card">
             <div class="blog-card-tags">
                 <span class="blog-card-tag">Brevet A2</span>
@@ -347,7 +196,6 @@
             <p>Tout ce qu'il faut savoir : prérequis, format, sujets abordés et les meilleurs conseils de préparation.</p>
             <div class="blog-card-meta">10 min de lecture · Fév 2026</div>
         </a>
-
         <a href="a1-a3-vs-a2-difference-fr.html" class="blog-card">
             <div class="blog-card-tags">
                 <span class="blog-card-tag">Comparaison</span>
@@ -357,13 +205,11 @@
             <p>Comparaison claire des deux certificats : prérequis, format d'examen, privilèges et aide à la décision.</p>
             <div class="blog-card-meta">7 min de lecture · Fév 2026</div>
         </a>
-
     </div>
 
     <div class="blog-section-label">Guías en Español</div>
 
     <div class="blog-grid">
-
         <a href="aprobar-examen-drones-a1-a3.html" class="blog-card">
             <div class="blog-card-tags">
                 <span class="blog-card-tag">Certificado A1/A3</span>
@@ -373,7 +219,6 @@
             <p>Tu punto de partida: formato, temario, coste por país y 5 consejos para aprobar a la primera.</p>
             <div class="blog-card-meta">9 min de lectura · Feb 2026</div>
         </a>
-
         <a href="aprobar-examen-drones-a2.html" class="blog-card">
             <div class="blog-card-tags">
                 <span class="blog-card-tag">Certificado A2</span>
@@ -383,7 +228,6 @@
             <p>Todo lo que necesitas: requisitos, formato, temario y los mejores consejos de preparación.</p>
             <div class="blog-card-meta">10 min de lectura · Feb 2026</div>
         </a>
-
         <a href="a1-a3-vs-a2-diferencia.html" class="blog-card">
             <div class="blog-card-tags">
                 <span class="blog-card-tag">Comparación</span>
@@ -393,13 +237,11 @@
             <p>Comparación clara de los dos certificados: requisitos, formato de examen, privilegios y ayuda para decidir.</p>
             <div class="blog-card-meta">7 min de lectura · Feb 2026</div>
         </a>
-
     </div>
 
     <div class="blog-section-label">Guide in Italiano</div>
 
     <div class="blog-grid">
-
         <a href="superare-esame-droni-a1-a3.html" class="blog-card">
             <div class="blog-card-tags">
                 <span class="blog-card-tag">Attestato A1/A3</span>
@@ -409,7 +251,6 @@
             <p>Il tuo punto di partenza: formato, argomenti, costo per paese e 5 consigli per superarlo al primo tentativo.</p>
             <div class="blog-card-meta">9 min di lettura · Feb 2026</div>
         </a>
-
         <a href="superare-esame-droni-a2.html" class="blog-card">
             <div class="blog-card-tags">
                 <span class="blog-card-tag">Attestato A2</span>
@@ -419,7 +260,6 @@
             <p>Tutto quello che serve: prerequisiti, formato, argomenti e i migliori consigli di preparazione.</p>
             <div class="blog-card-meta">10 min di lettura · Feb 2026</div>
         </a>
-
         <a href="a1-a3-vs-a2-differenza.html" class="blog-card">
             <div class="blog-card-tags">
                 <span class="blog-card-tag">Confronto</span>
@@ -429,7 +269,38 @@
             <p>Confronto chiaro dei due certificati: requisiti, formato d'esame, privilegi e guida alla scelta.</p>
             <div class="blog-card-meta">7 min di lettura · Feb 2026</div>
         </a>
+    </div>
 
+    <div class="blog-section-label">Nederlandse Gidsen</div>
+
+    <div class="blog-grid">
+        <a href="easa-a1-a3-drone-examen-halen.html" class="blog-card">
+            <div class="blog-card-tags">
+                <span class="blog-card-tag">A1/A3 Certificaat</span>
+                <span class="blog-card-tag lang">Nederlands</span>
+            </div>
+            <h3>EASA A1/A3 Drone-examen Halen — Beginnersgids 2026</h3>
+            <p>Je startpunt: examenformaat, alle 9 studieonderwerpen, beschikbaarheid per land en 5 tips om in één keer te slagen.</p>
+            <div class="blog-card-meta">9 min leestijd · Mrt 2026</div>
+        </a>
+        <a href="easa-a2-drone-examen-halen.html" class="blog-card">
+            <div class="blog-card-tags">
+                <span class="blog-card-tag">A2 Certificaat</span>
+                <span class="blog-card-tag lang">Nederlands</span>
+            </div>
+            <h3>EASA A2 Drone-examen Halen — Complete Gids 2026</h3>
+            <p>Alles wat je moet weten: vereisten, examenformaat, behandelde onderwerpen en de beste manier om je voor te bereiden.</p>
+            <div class="blog-card-meta">10 min leestijd · Mrt 2026</div>
+        </a>
+        <a href="a1-a3-vs-a2-verschil.html" class="blog-card">
+            <div class="blog-card-tags">
+                <span class="blog-card-tag">Vergelijking</span>
+                <span class="blog-card-tag lang">Nederlands</span>
+            </div>
+            <h3>A1/A3 vs A2 — Wat is het Verschil en Welke Heb Je Nodig?</h3>
+            <p>Een duidelijke vergelijking van de twee certificaten: wanneer je welke nodig hebt, wat ze dekken en hoe je ze krijgt.</p>
+            <div class="blog-card-meta">7 min leestijd · Mrt 2026</div>
+        </a>
     </div>
 
 </main>
@@ -437,11 +308,8 @@
 <div class="cta-banner">
     <div class="cta-banner-inner">
         <h2>Ready to start practicing?</h2>
-        <p>500+ realistic exam questions with detailed explanations. Simulate the real exam or study by topic — available in 5 languages.</p>
-        <div class="cta-buttons">
-            <a href="https://apps.apple.com/app/id6758833683" class="btn btn-amber" target="_blank">DronePilot A1/A3</a>
-            <a href="https://apps.apple.com/app/id6759554282" class="btn btn-outline" target="_blank">DronePilot A2</a>
-        </div>
+        <p>500+ realistic exam questions with detailed explanations. Simulate the real exam or study by topic — available in 6 languages.</p>
+        <div class="store-buttons" data-app="both"></div>
     </div>
 </div>
 
@@ -450,5 +318,6 @@
     <p style="margin-top: 1rem;">© 2026 APP Factory. All rights reserved.</p>
 </footer>
 
+<script src="store-links.js"></script>
 </body>
 </html>
