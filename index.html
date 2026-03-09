@@ -615,19 +615,7 @@
         .footer-bottom a { color: var(--grey); text-decoration: none; }
         .footer-bottom a:hover { color: var(--amber-light); }
 
-        /* ===== PRIVACY ===== */
-        .privacy-page { display: none; padding: 8rem 2rem 4rem; max-width: 760px; margin: 0 auto; }
-        .privacy-page.active { display: block; }
-        .privacy-page h1 { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 400; margin-bottom: 0.5rem; }
-        .privacy-page .updated { color: var(--grey); font-size: 0.9rem; margin-bottom: 3rem; }
-        .privacy-page h2 { font-size: 1.2rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 0.75rem; }
-        .privacy-page p, .privacy-page li { color: var(--grey); margin-bottom: 0.75rem; font-size: 0.95rem; }
-        .privacy-page ul { padding-left: 1.5rem; margin-bottom: 1rem; }
-        .privacy-page a { color: var(--amber); }
-        .back-link { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--amber); text-decoration: none; font-size: 0.9rem; margin-bottom: 2rem; }
 
-        .main-content { }
-        .main-content.hidden { display: none; }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 900px) {
@@ -663,21 +651,20 @@
 <body>
 
 <nav>
-    <a href="#" class="nav-logo" onclick="showMain()">
+    <a href="/" class="nav-logo">
         <div class="nav-logo-icon"><img src="logo.jpg" alt="DronePilot logo"></div>
         <div class="nav-logo-text">Drone<span>Pilot</span></div>
     </a>
     <ul class="nav-links" id="navLinks">
-        <li><a href="#apps" onclick="showMain()">Apps</a></li>
-        <li><a href="#features" onclick="showMain()">Features</a></li>
+        <li><a href="#apps">Apps</a></li>
+        <li><a href="#features">Features</a></li>
         <li><a href="blog/">Guides</a></li>
-        <li><a href="#faq" onclick="showMain()">FAQ</a></li>
-        <li><a href="#apps" class="nav-cta" onclick="showMain()">Download Free</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#apps" class="nav-cta">Download Free</a></li>
     </ul>
     <button class="mobile-menu" onclick="toggleMenu()">☰</button>
 </nav>
 
-<div class="main-content" id="mainContent">
 
     <!-- HERO -->
     <header class="hero">
@@ -871,42 +858,6 @@
             </div>
         </div>
     </div>
-</div>
-
-<!-- PRIVACY PAGE -->
-<div class="privacy-page" id="privacyPage">
-    <a href="#" class="back-link" onclick="showMain()">← Back to home</a>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: February 19, 2026</p>
-    <h2>Introduction</h2>
-    <p>APP Factory ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile applications.</p>
-    <h2>Information We Collect</h2>
-    <p>Our apps are designed with privacy in mind. We collect minimal data:</p>
-    <ul>
-        <li><strong>Usage data:</strong> Anonymous quiz progress and statistics stored locally on your device. This data is not transmitted to our servers.</li>
-        <li><strong>Purchase information:</strong> If you make an in-app purchase, the transaction is processed by Apple (App Store) or Google (Google Play). We do not collect or store your payment details.</li>
-        <li><strong>Analytics:</strong> We may use anonymised, aggregated analytics to improve app performance and content quality. No personally identifiable information is collected.</li>
-    </ul>
-    <h2>Data Storage</h2>
-    <p>Your quiz progress, scores, and preferences are stored locally on your device. We do not operate user accounts, and we do not store personal data on external servers.</p>
-    <h2>Third-Party Services</h2>
-    <p>Our apps may use the following third-party services:</p>
-    <ul>
-        <li><strong>Apple App Store / Google Play Store:</strong> For app distribution and in-app purchases.</li>
-        <li><strong>RevenueCat:</strong> For managing in-app purchases. See <a href="https://www.revenuecat.com/privacy/">RevenueCat's Privacy Policy</a>.</li>
-    </ul>
-    <h2>Children's Privacy</h2>
-    <p>Our apps are not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
-    <h2>Data Sharing</h2>
-    <p>We do not sell, trade, or transfer your personal information to third parties. We do not serve advertisements in our apps.</p>
-    <h2>Your Rights</h2>
-    <p>Under GDPR and applicable EU data protection laws, you have the right to access, rectify, or delete any personal data we hold. Since we store data locally on your device, you can delete all app data by uninstalling the application.</p>
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Changes will be posted within the app and on this page.</p>
-    <h2>Contact Us</h2>
-    <p>Questions? Contact us at <a href="mailto:sprutski@icloud.com">sprutski@icloud.com</a></p>
-    <p style="margin-top: 2rem;">APP Factory · Denmark</p>
-</div>
 
 <!-- FOOTER -->
 <footer>
@@ -920,37 +871,27 @@
         </div>
         <div class="footer-col">
             <h4>Apps</h4>
-            <a href="#apps" onclick="showMain()">DronePilot A1/A3</a>
-            <a href="#apps" onclick="showMain()">DronePilot A2</a>
+            <a href="#apps">DronePilot A1/A3</a>
+            <a href="#apps">DronePilot A2</a>
         </div>
         <div class="footer-col">
             <h4>Resources</h4>
             <a href="blog/">Exam Guides</a>
-            <a href="#faq" onclick="showMain()">FAQ</a>
+            <a href="#faq">FAQ</a>
         </div>
         <div class="footer-col">
             <h4>Company</h4>
             <a href="mailto:sprutski@icloud.com">Contact</a>
-            <a href="https://docs.google.com/document/d/e/2PACX-1vROa5oJ44DS1AYXICpGPpKzAdh0gS_wBzRL-j7eAggk1Q0YkalL8vSEy50k_YUtaF4edi-KFFJjnzXp/pub" target="_blank">Privacy Policy</a>
+            <a href="privacy.html">Privacy Policy</a>
         </div>
     </div>
     <div class="footer-bottom">
         <p>© 2026 APP Factory. All rights reserved.</p>
-        <a href="https://docs.google.com/document/d/e/2PACX-1vROa5oJ44DS1AYXICpGPpKzAdh0gS_wBzRL-j7eAggk1Q0YkalL8vSEy50k_YUtaF4edi-KFFJjnzXp/pub" target="_blank">Privacy Policy</a>
+        <a href="privacy.html">Privacy Policy</a>
     </div>
 </footer>
 
 <script>
-    function showPrivacy() {
-        document.getElementById('mainContent').classList.add('hidden');
-        document.getElementById('privacyPage').classList.add('active');
-        window.scrollTo(0, 0);
-        return false;
-    }
-    function showMain() {
-        document.getElementById('mainContent').classList.remove('hidden');
-        document.getElementById('privacyPage').classList.remove('active');
-    }
     function toggleMenu() {
         document.getElementById('navLinks').classList.toggle('open');
     }
