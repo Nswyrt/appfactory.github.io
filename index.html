@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DronePilot — EASA Drone Exam Prep App | A1/A3 & A2 Practice Questions</title>
-    <meta name="description" content="Pass your EASA drone pilot exam on the first try. 500+ practice questions for A1/A3 and A2 certificates. Free exam simulation, detailed explanations, 5 languages. Download now.">
+    <meta name="description" content="Pass your EASA drone pilot exam on the first try. 500+ practice questions for A1/A3 and A2 certificates. Free exam simulation, detailed explanations, 6 languages. Download now.">
     <meta name="keywords" content="EASA drone exam, A1/A3 certificate, A2 drone license, drone pilot exam prep, UAS exam questions, drone quiz app">
     <meta name="author" content="APP Factory">
     <meta name="robots" content="index, follow">
@@ -12,16 +12,17 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="DronePilot — Pass Your EASA Drone Exam">
-    <meta property="og:description" content="500+ practice questions for EASA A1/A3 and A2 drone certificates. Free exam simulation in 5 languages.">
+    <meta property="og:description" content="500+ practice questions for EASA A1/A3 and A2 drone certificates. Free exam simulation in 6 languages.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dronepilotapp.eu/">
 
-    <!-- hreflang for future languages -->
+    <!-- hreflang -->
     <link rel="alternate" hreflang="en" href="https://dronepilotapp.eu/">
     <link rel="alternate" hreflang="de" href="https://dronepilotapp.eu/de/">
     <link rel="alternate" hreflang="fr" href="https://dronepilotapp.eu/fr/">
     <link rel="alternate" hreflang="es" href="https://dronepilotapp.eu/es/">
     <link rel="alternate" hreflang="it" href="https://dronepilotapp.eu/it/">
+    <link rel="alternate" hreflang="nl" href="https://dronepilotapp.eu/nl/">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
@@ -34,7 +35,7 @@
         "name": "DronePilot A2 - Drone Licence",
         "operatingSystem": "iOS, Android",
         "applicationCategory": "EducationalApplication",
-        "description": "EASA A2 drone exam preparation app with 200+ practice questions, exam simulation, and detailed explanations in 5 languages.",
+        "description": "EASA A2 drone exam preparation app with 200+ practice questions, exam simulation, and detailed explanations in 6 languages.",
         "offers": {
             "@type": "Offer",
             "price": "0",
@@ -443,6 +444,13 @@
             color: var(--white-dim);
             font-weight: 400;
         }
+        .lang-item a {
+            color: var(--white-dim);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .lang-item a:hover { color: var(--amber-light); }
+        .lang-item.active { color: var(--amber); font-weight: 600; }
         .lang-flag { font-size: 1.4rem; }
 
         /* ===== BLOG ===== */
@@ -689,7 +697,7 @@
                 <div class="hero-stat-label">Exam questions</div>
             </div>
             <div class="hero-stat">
-                <div class="hero-stat-number">5</div>
+                <div class="hero-stat-number">6</div>
                 <div class="hero-stat-label">Languages</div>
             </div>
             <div class="hero-stat">
@@ -705,11 +713,12 @@
 
     <!-- LANGUAGE BAR -->
     <div class="lang-bar">
-        <div class="lang-item"><span class="lang-flag">🇬🇧</span> English</div>
-        <div class="lang-item"><span class="lang-flag">🇩🇪</span> Deutsch</div>
-        <div class="lang-item"><span class="lang-flag">🇫🇷</span> Français</div>
-        <div class="lang-item"><span class="lang-flag">🇪🇸</span> Español</div>
-        <div class="lang-item"><span class="lang-flag">🇮🇹</span> Italiano</div>
+        <div class="lang-item active"><span class="lang-flag">🇬🇧</span> English</div>
+        <div class="lang-item"><span class="lang-flag">🇩🇪</span> <a href="de/">Deutsch</a></div>
+        <div class="lang-item"><span class="lang-flag">🇫🇷</span> <a href="fr/">Français</a></div>
+        <div class="lang-item"><span class="lang-flag">🇪🇸</span> <a href="es/">Español</a></div>
+        <div class="lang-item"><span class="lang-flag">🇮🇹</span> <a href="it/">Italiano</a></div>
+        <div class="lang-item"><span class="lang-flag">🇳🇱</span> <a href="nl/">Nederlands</a></div>
     </div>
 
     <!-- APPS -->
@@ -717,6 +726,7 @@
         <div class="section-tag">Our Apps</div>
         <div class="section-title">Choose your certificate</div>
         <p class="section-subtitle">Two dedicated apps for each step of your EASA drone certification journey.</p>
+
         <div class="apps-grid">
             <div class="app-card">
                 <span class="app-card-badge popular">Most popular</span>
@@ -724,27 +734,22 @@
                 <p>Your first step as an EU drone pilot. Comprehensive preparation for the EASA Open Category A1/A3 certificate of competence — required for all drone operators.</p>
                 <div class="app-card-features">
                     <span class="feature-pill">Exam simulation</span>
-                    <span class="feature-pill">5 languages</span>
+                    <span class="feature-pill">6 languages</span>
                     <span class="feature-pill">VLOS & meteorology</span>
                 </div>
-                <div class="store-links">
-                    <a href="https://apps.apple.com/app/id6758833683" target="_blank"><img class="store-btn" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download DronePilot A1/A3 on App Store"></a>
-                    <a href="https://play.google.com/store/apps/details?id=com.nicolajswyrtz.dronepiloten" target="_blank"><img class="store-btn" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get DronePilot A1/A3 on Google Play"></a>
-                </div>
+                <div class="store-buttons" data-app="a1a3"></div>
             </div>
+
             <div class="app-card">
                 <span class="app-card-badge">Advanced</span>
                 <h3>DronePilot A2</h3>
                 <p>Ready to fly closer to people? Prepare for the EASA A2 certificate of competency — covering the 1:1 rule, C2 drones, low-speed mode, and ground risk mitigation.</p>
                 <div class="app-card-features">
                     <span class="feature-pill">Exam simulation</span>
-                    <span class="feature-pill">5 languages</span>
+                    <span class="feature-pill">6 languages</span>
                     <span class="feature-pill">1:1 rule & C2 specs</span>
                 </div>
-                <div class="store-links">
-                    <a href="https://apps.apple.com/app/id6759554282" target="_blank"><img class="store-btn" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download DronePilot A2 on App Store"></a>
-                    <a href="https://play.google.com/store/apps/details?id=com.nicolajswyrtz.dronepilotA2" target="_blank"><img class="store-btn" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get DronePilot A2 on Google Play"></a>
-                </div>
+                <div class="store-buttons" data-app="a2"></div>
             </div>
         </div>
     </section>
@@ -783,8 +788,8 @@
             </div>
             <div class="feature-card">
                 <span class="feature-icon">🌍</span>
-                <h4>5 Languages</h4>
-                <p>Study in the language you're most comfortable with. Available in English, German, French, Spanish, and Italian.</p>
+                <h4>6 Languages</h4>
+                <p>Study in the language you're most comfortable with. Available in English, German, French, Spanish, Italian, and Dutch.</p>
             </div>
         </div>
     </section>
@@ -960,5 +965,6 @@
         }
     }
 </script>
+<script src="blog/store-links.js"></script>
 </body>
 </html>
