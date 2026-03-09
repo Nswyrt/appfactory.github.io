@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DronePilot — EASA Drone Examen App | A1/A3 & A2 Oefenvragen</title>
+    <meta name="description" content="Slaag voor je EASA drone-examen in één keer. 500+ oefenvragen voor A1/A3 en A2 certificaten. Gratis examensimulatie, uitgebreide uitleg, 6 talen. Download nu.">
+    <meta name="keywords" content="EASA drone examen, A1/A3 certificaat, A2 drone bewijs, dronepiloot examen voorbereiding, UAS examenvragen, drone quiz app, bewijs van bevoegdheid drone">
+    <meta name="author" content="APP Factory">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dronepilotapp.eu/nl/">
+
+    <meta property="og:title" content="DronePilot — Slaag voor je EASA Drone Examen">
+    <meta property="og:description" content="500+ oefenvragen voor EASA A1/A3 en A2 drone certificaten. Gratis examensimulatie in 6 talen.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dronepilotapp.eu/nl/">
+
+    <link rel="alternate" hreflang="en" href="https://dronepilotapp.eu/">
+    <link rel="alternate" hreflang="de" href="https://dronepilotapp.eu/de/">
+    <link rel="alternate" hreflang="fr" href="https://dronepilotapp.eu/fr/">
+    <link rel="alternate" hreflang="es" href="https://dronepilotapp.eu/es/">
+    <link rel="alternate" hreflang="it" href="https://dronepilotapp.eu/it/">
+    <link rel="alternate" hreflang="nl" href="https://dronepilotapp.eu/nl/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "DronePilot A2 - Drone Bewijs",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "EducationalApplication",
+        "description": "EASA A2 drone-examen voorbereidingsapp met 200+ oefenvragen, examensimulatie en uitgebreide uitleg in 6 talen.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "APP Factory"
+        },
+        "inLanguage": "nl"
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #1a2340;
+            --navy-deep: #0f1628;
+            --navy-light: #243054;
+            --amber: #d4943a;
+            --amber-light: #f0be6e;
+            --amber-glow: rgba(212, 148, 58, 0.1);
+            --sky: #5b8fd9;
+            --sky-light: #8ab4f0;
+            --white: #f4f2ef;
+            --white-dim: #c8c4be;
+            --grey: #8a8693;
+            --surface: #1e2a45;
+            --surface-hover: #263352;
+            --border: rgba(255,255,255,0.06);
+            --border-light: rgba(255,255,255,0.1);
+            --radius: 20px;
+            --radius-sm: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--navy-deep);
+            color: var(--white);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(15, 22, 40, 0.85);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 0.6rem;
+            text-decoration: none; color: var(--white);
+        }
+        .nav-logo-icon { width: 36px; height: 36px; border-radius: 10px; overflow: hidden; }
+        .nav-logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+        .nav-logo-text {
+            font-family: 'Fraunces', serif; font-size: 1.3rem;
+            font-weight: 600; letter-spacing: -0.02em;
+        }
+        .nav-logo-text span { color: var(--amber); }
+        .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
+        .nav-links a {
+            color: var(--white-dim); text-decoration: none;
+            font-size: 0.88rem; font-weight: 500; transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--amber-light); }
+        .nav-cta {
+            padding: 0.55rem 1.4rem !important; background: var(--amber) !important;
+            color: var(--navy-deep) !important; border-radius: 100px !important;
+            font-weight: 600 !important; transition: all 0.25s !important;
+        }
+        .nav-cta:hover { background: var(--amber-light) !important; transform: translateY(-1px); }
+        .mobile-menu { display: none; cursor: pointer; color: var(--white); font-size: 1.5rem; background: none; border: none; }
+
+        .hero {
+            min-height: 100vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 8rem 2rem 5rem;
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+            width: 900px; height: 900px;
+            background: radial-gradient(ellipse, rgba(91,143,217,0.08) 0%, rgba(212,148,58,0.04) 40%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+        }
+
+        .hero-label {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.4rem 1.1rem; background: var(--surface);
+            border: 1px solid var(--border-light); border-radius: 100px;
+            font-size: 0.78rem; font-weight: 500; color: var(--white-dim);
+            margin-bottom: 2.5rem; letter-spacing: 0.03em;
+        }
+        .hero-label .pulse-dot {
+            width: 7px; height: 7px; background: #5de3a0; border-radius: 50%;
+            animation: pulse 2.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(93,227,160,0.4); }
+            50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(93,227,160,0); }
+        }
+
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2.8rem, 6.5vw, 5rem);
+            font-weight: 400; line-height: 1.1; letter-spacing: -0.03em;
+            max-width: 780px; margin-bottom: 1.5rem;
+        }
+        .hero h1 em { font-style: italic; color: var(--amber); }
+        .hero > p {
+            font-size: 1.15rem; color: var(--grey); max-width: 540px;
+            margin-bottom: 2.5rem; font-weight: 300;
+        }
+
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-bottom: 4rem; }
+        .btn {
+            padding: 0.9rem 2.2rem; border-radius: 100px; font-size: 0.95rem; font-weight: 600;
+            text-decoration: none; transition: all 0.25s; cursor: pointer; border: none;
+            font-family: inherit; display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-amber { background: var(--amber); color: var(--navy-deep); }
+        .btn-amber:hover {
+            background: var(--amber-light); transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(212,148,58,0.25);
+        }
+        .btn-outline { background: transparent; color: var(--white); border: 1px solid var(--border-light); }
+        .btn-outline:hover { border-color: var(--amber); background: var(--amber-glow); }
+
+        .hero-stats { display: flex; gap: 3rem; flex-wrap: wrap; justify-content: center; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number {
+            font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 600;
+            color: var(--amber-light); line-height: 1;
+        }
+        .hero-stat-label { font-size: 0.78rem; color: var(--grey); margin-top: 0.3rem; font-weight: 400; }
+
+        section { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
+        .section-tag {
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.18em; color: var(--amber); margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1rem; line-height: 1.15;
+        }
+        .section-subtitle {
+            color: var(--grey); font-size: 1.05rem; max-width: 560px;
+            margin-bottom: 3rem; font-weight: 300;
+        }
+
+        .apps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .app-card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 2.5rem;
+            transition: all 0.35s; position: relative; overflow: hidden;
+        }
+        .app-card:hover {
+            background: var(--surface-hover); border-color: rgba(212,148,58,0.2);
+            transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .app-card-badge {
+            display: inline-block; font-size: 0.65rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 0.3rem 0.75rem; border-radius: 100px;
+            background: rgba(91,143,217,0.12); color: var(--sky-light);
+            border: 1px solid rgba(91,143,217,0.2); margin-bottom: 1.25rem;
+        }
+        .app-card-badge.popular {
+            background: rgba(212,148,58,0.12); color: var(--amber-light);
+            border-color: rgba(212,148,58,0.2);
+        }
+        .app-card h3 {
+            font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 400;
+            margin-bottom: 0.75rem; letter-spacing: -0.01em;
+        }
+        .app-card p { color: var(--grey); font-size: 0.92rem; line-height: 1.7; margin-bottom: 1.5rem; }
+        .app-card-features { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.75rem; }
+        .feature-pill {
+            font-size: 0.72rem; font-weight: 500; padding: 0.3rem 0.7rem;
+            background: rgba(255,255,255,0.04); border: 1px solid var(--border-light);
+            border-radius: 100px; color: var(--white-dim);
+        }
+        .store-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .store-btn { height: 42px; opacity: 0.8; transition: all 0.2s; border-radius: 8px; }
+        .store-btn:hover { opacity: 1; transform: scale(1.03); }
+
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .feature-card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); padding: 2rem; transition: all 0.3s;
+        }
+        .feature-card:hover { border-color: rgba(212,148,58,0.15); background: var(--surface-hover); }
+        .feature-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+        .feature-card h4 { font-weight: 600; font-size: 1rem; margin-bottom: 0.5rem; }
+        .feature-card p { font-size: 0.85rem; color: var(--grey); line-height: 1.6; }
+
+        .lang-bar {
+            display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+            padding: 3rem 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+        }
+        .lang-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; color: var(--white-dim); font-weight: 400; }
+        .lang-item a { color: var(--white-dim); text-decoration: none; transition: color 0.2s; }
+        .lang-item a:hover { color: var(--amber-light); }
+        .lang-item.active a { color: var(--amber); font-weight: 600; }
+        .lang-flag { font-size: 1.4rem; }
+
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .blog-card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); padding: 2rem; text-decoration: none;
+            color: inherit; transition: all 0.3s; display: block;
+        }
+        .blog-card:hover {
+            border-color: rgba(212,148,58,0.2); transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+        }
+        .blog-card-tag {
+            font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.1em; color: var(--amber); margin-bottom: 0.75rem; display: block;
+        }
+        .blog-card h3 {
+            font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 400;
+            margin-bottom: 0.6rem; line-height: 1.3;
+        }
+        .blog-card p { font-size: 0.85rem; color: var(--grey); line-height: 1.6; }
+        .blog-card-meta { margin-top: 1rem; font-size: 0.75rem; color: var(--grey); }
+
+        .faq-list { max-width: 700px; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1.5rem 0; }
+        .faq-q {
+            font-weight: 600; font-size: 1rem; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            color: var(--white); background: none; border: none; width: 100%;
+            text-align: left; font-family: inherit; line-height: 1.5;
+        }
+        .faq-q::after {
+            content: '+'; font-size: 1.3rem; color: var(--amber);
+            flex-shrink: 0; margin-left: 1rem; transition: transform 0.3s;
+        }
+        .faq-q.active::after { content: '−'; }
+        .faq-a {
+            max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s;
+            color: var(--grey); font-size: 0.92rem; line-height: 1.7;
+        }
+        .faq-a.open { max-height: 300px; padding-top: 1rem; }
+
+        .cta-section { text-align: center; padding: 5rem 2rem; position: relative; }
+        .cta-box {
+            background: linear-gradient(135deg, var(--navy-light), var(--surface));
+            border: 1px solid var(--border-light); border-radius: var(--radius);
+            padding: 4rem 3rem; max-width: 700px; margin: 0 auto;
+            position: relative; overflow: hidden;
+        }
+        .cta-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, var(--sky), var(--amber), var(--sky));
+        }
+
+        footer {
+            border-top: 1px solid var(--border); padding: 3rem 2rem;
+            max-width: 1100px; margin: 0 auto;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2rem; margin-bottom: 3rem;
+        }
+        .footer-brand p { color: var(--grey); font-size: 0.85rem; margin-top: 0.75rem; max-width: 280px; }
+        .footer-col h4 {
+            font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.12em; color: var(--white-dim); margin-bottom: 1rem;
+        }
+        .footer-col a {
+            display: block; color: var(--grey); text-decoration: none;
+            font-size: 0.88rem; margin-bottom: 0.5rem; transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--amber-light); }
+        .footer-bottom {
+            border-top: 1px solid var(--border); padding-top: 2rem;
+            display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--grey);
+        }
+        .footer-bottom a { color: var(--grey); text-decoration: none; }
+        .footer-bottom a:hover { color: var(--amber-light); }
+
+        @media (max-width: 900px) {
+            .apps-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            .nav-links.open {
+                display: flex; flex-direction: column; position: absolute;
+                top: 100%; left: 0; right: 0; background: rgba(15,22,40,0.97);
+                backdrop-filter: blur(24px); padding: 1.5rem 2rem;
+                border-bottom: 1px solid var(--border); gap: 1rem;
+            }
+            section { padding: 4rem 1.25rem; }
+            .hero { padding: 7rem 1.25rem 4rem; }
+            .hero-stats { gap: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 0.5rem; }
+            .lang-bar { gap: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/nl/" class="nav-logo">
+        <div class="nav-logo-icon"><img src="../logo.jpg" alt="DronePilot Logo"></div>
+        <div class="nav-logo-text">Drone<span>Pilot</span></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#apps">Apps</a></li>
+        <li><a href="#features">Functies</a></li>
+        <li><a href="../blog/">Gidsen</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#apps" class="nav-cta">Gratis downloaden</a></li>
+    </ul>
+    <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-label">
+        <span class="pulse-dot"></span>
+        Vertrouwd door dronepiloten in heel Europa
+    </div>
+    <h1>Slaag voor je EASA drone-examen in <em>één keer</em></h1>
+    <p>Oefen met realistische examenvragen, gesimuleerde examens met timer en uitgebreide uitleg — alles wat je nodig hebt voor je A1/A3- of A2-dronecertificaat.</p>
+    <div class="hero-buttons">
+        <a href="#apps" class="btn btn-amber">↓ Gratis downloaden</a>
+        <a href="#features" class="btn btn-outline">Zo werkt het</a>
+    </div>
+    <div class="hero-stats">
+        <div class="hero-stat">
+            <div class="hero-stat-number">500+</div>
+            <div class="hero-stat-label">Examenvragen</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-number">6</div>
+            <div class="hero-stat-label">Talen</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-number">30</div>
+            <div class="hero-stat-label">EU/EER-landen</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-number">Gratis</div>
+            <div class="hero-stat-label">5 vragen/dag</div>
+        </div>
+    </div>
+</header>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+    <div class="lang-item"><span class="lang-flag">🇬🇧</span> <a href="../">English</a></div>
+    <div class="lang-item"><span class="lang-flag">🇩🇪</span> <a href="../de/">Deutsch</a></div>
+    <div class="lang-item"><span class="lang-flag">🇫🇷</span> <a href="../fr/">Français</a></div>
+    <div class="lang-item"><span class="lang-flag">🇪🇸</span> <a href="../es/">Español</a></div>
+    <div class="lang-item"><span class="lang-flag">🇮🇹</span> <a href="../it/">Italiano</a></div>
+    <div class="lang-item active"><span class="lang-flag">🇳🇱</span> <a href="/nl/">Nederlands</a></div>
+</div>
+
+<!-- APPS -->
+<section id="apps">
+    <div class="section-tag">Onze apps</div>
+    <div class="section-title">Kies je certificaat</div>
+    <p class="section-subtitle">Twee speciale apps voor elke stap van je EASA-dronecertificering.</p>
+
+    <div class="apps-grid">
+        <div class="app-card">
+            <span class="app-card-badge popular">Populairst</span>
+            <h3>DronePilot A1/A3</h3>
+            <p>Je eerste stap als EU-dronepiloot. Uitgebreide voorbereiding op het EASA Open Categorie A1/A3-bewijs van bevoegdheid — verplicht voor alle drone-operators.</p>
+            <div class="app-card-features">
+                <span class="feature-pill">Examensimulatie</span>
+                <span class="feature-pill">6 talen</span>
+                <span class="feature-pill">VLOS & meteorologie</span>
+            </div>
+            <div class="store-links">
+                <a href="https://apps.apple.com/app/id6758833683" target="_blank"><img class="store-btn" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download DronePilot A1/A3 in de App Store"></a>
+                <a href="https://play.google.com/store/apps/details?id=com.nicolajswyrtz.dronepiloten" target="_blank"><img class="store-btn" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Download DronePilot A1/A3 op Google Play"></a>
+            </div>
+        </div>
+
+        <div class="app-card">
+            <span class="app-card-badge">Gevorderd</span>
+            <h3>DronePilot A2</h3>
+            <p>Klaar om dichter bij mensen te vliegen? Bereid je voor op het EASA A2-bewijs van bevoegdheid — met de 1:1-regel, C2-drones, lage-snelheidsmodus en grondrisicovermindering.</p>
+            <div class="app-card-features">
+                <span class="feature-pill">Examensimulatie</span>
+                <span class="feature-pill">6 talen</span>
+                <span class="feature-pill">1:1-regel & C2-specs</span>
+            </div>
+            <div class="store-links">
+                <a href="https://apps.apple.com/app/id6759554282" target="_blank"><img class="store-btn" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download DronePilot A2 in de App Store"></a>
+                <a href="https://play.google.com/store/apps/details?id=com.nicolajswyrtz.dronepilotA2" target="_blank"><img class="store-btn" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Download DronePilot A2 op Google Play"></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+    <div class="section-tag">Zo werkt het</div>
+    <div class="section-title">Alles wat je nodig hebt om te slagen</div>
+    <p class="section-subtitle">Ontworpen door dronepiloten voor dronepiloten. Elke functie is er om je te helpen slagen voor je examen.</p>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <span class="feature-icon">📝</span>
+            <h4>Realistische examensimulatie</h4>
+            <p>30 vragen met een afteltimer — precies zoals het officiële EASA-examen. Weet wat je kunt verwachten op de examendag.</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">💡</span>
+            <h4>Uitgebreide uitleg</h4>
+            <p>Elk antwoord wordt vergezeld van een gedetailleerde uitleg — of je nu goed of fout hebt geantwoord. Begrijp het waarom, niet alleen het wat.</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">🔄</span>
+            <h4>Foutentraining</h4>
+            <p>Een vraag fout beantwoord? Die wordt automatisch opgeslagen. Herhaal en beheers je zwakke punten met gerichte foutentraining.</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">📊</span>
+            <h4>Slimme statistieken</h4>
+            <p>Volg je voortgang over alle onderwerpen. Zie je sterke en zwakke punten — besteed je studietijd waar het het meest telt.</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">📁</span>
+            <h4>Studeren per categorie</h4>
+            <p>Verdiep je in specifieke onderwerpen: meteorologie, regelgeving, technische kennis, grondrisico. Perfect voor gericht herhalen.</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">🌍</span>
+            <h4>6 talen</h4>
+            <p>Studeer in de taal waarin je je het prettigst voelt. Beschikbaar in het Engels, Duits, Frans, Spaans, Italiaans en Nederlands.</p>
+        </div>
+    </div>
+</section>
+
+<!-- BLOG / GUIDES -->
+<section id="blog">
+    <div class="section-tag">Examengidsen</div>
+    <div class="section-title">Bereid je slim voor</div>
+    <p class="section-subtitle">Gratis gidsen en tips voor je EASA drone-examen.</p>
+
+    <div class="blog-grid">
+        <a href="../blog/easa-a1-a3-drone-examen-halen.html" class="blog-card">
+            <span class="blog-card-tag">A1/A3 Certificaat</span>
+            <h3>EASA A1/A3 drone-examen halen — Beginnersgids 2026</h3>
+            <p>Je startpunt: examenformaat, alle 9 studieonderwerpen, beschikbaarheid per land en 5 tips om in één keer te slagen.</p>
+            <div class="blog-card-meta">9 min leestijd</div>
+        </a>
+        <a href="../blog/easa-a2-drone-examen-halen.html" class="blog-card">
+            <span class="blog-card-tag">A2 Certificaat</span>
+            <h3>EASA A2 drone-examen halen — Complete gids 2026</h3>
+            <p>Alles wat je moet weten: vereisten, examenformaat, behandelde onderwerpen en de beste manier om je voor te bereiden.</p>
+            <div class="blog-card-meta">10 min leestijd</div>
+        </a>
+        <a href="../blog/a1-a3-vs-a2-verschil.html" class="blog-card">
+            <span class="blog-card-tag">Vergelijking</span>
+            <h3>EASA A1/A3 vs A2 — Wat is het verschil en welke heb je nodig?</h3>
+            <p>Een duidelijke vergelijking van de twee certificaten: wanneer je welke nodig hebt, wat ze dekken en hoe je ze krijgt.</p>
+            <div class="blog-card-meta">7 min leestijd</div>
+        </a>
+    </div>
+    <div style="text-align:center; margin-top:1.5rem;">
+        <a href="../blog/" style="color:var(--amber); text-decoration:none; font-size:0.95rem; font-weight:500;">Bekijk alle gidsen →</a>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <div class="section-tag">FAQ</div>
+    <div class="section-title">Veelgestelde vragen</div>
+    <p class="section-subtitle">Snelle antwoorden over de app en het EASA-dronecertificeringsproces.</p>
+
+    <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Is de app gratis?</button>
+            <div class="faq-a">Ja! Je krijgt 5 gratis vragen per dag met volledige uitleg. Om alle vragen, de examenmodus, foutentraining en statistieken te ontgrendelen, kun je eenmalig upgraden naar Premium — geen abonnement, geen verborgen kosten.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Wat is het verschil tussen A1/A3 en A2?</button>
+            <div class="faq-a">Het A1/A3-certificaat is het basisbewijs van bevoegdheid dat vereist is voor alle operators van drones boven 250g. Het A2-certificaat is een aanvullende kwalificatie waarmee je dichter bij mensen mag vliegen (tot 5m in lage-snelheidsmodus). Je hebt eerst A1/A3 nodig voordat je het A2-examen kunt afleggen.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Is het certificaat geldig in alle EU-landen?</button>
+            <div class="faq-a">Ja. Zowel het A1/A3- als het A2-certificaat worden afgegeven onder EASA-regelgeving en zijn geldig in alle 27 EU-lidstaten plus Noorwegen, IJsland, Liechtenstein en Zwitserland. Je kunt het examen afleggen in elke EASA-lidstaat.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Hoeveel vragen heeft het echte examen?</button>
+            <div class="faq-a">Het A1/A3-examen bestaat uit 40 meerkeuzevragen, terwijl het A2-examen er 30 heeft. Je moet minimaal 75% scoren om te slagen. Onze examensimulatie bootst exact deze omstandigheden na met een afteltimer.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Kan ik het A2-examen online afleggen?</button>
+            <div class="faq-a">In Nederland wordt het A2-examen afgenomen door erkende exameninstanties zoals KIWA. Het examen vindt doorgaans op locatie plaats, maar de regels kunnen veranderen. Raadpleeg de ILT (Inspectie Leefomgeving en Transport) voor de meest actuele informatie over examenmogelijkheden.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Moet ik mijn certificaat vernieuwen?</button>
+            <div class="faq-a">Ja. Zowel het A1/A3- als het A2-certificaat is 5 jaar geldig vanaf de afgiftedatum. Voordat het verloopt, moet je het examen opnieuw halen. Onze app is perfect om je kennis op te frissen vóór de vernieuwing.</div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+    <div class="cta-box">
+        <div class="section-tag">Begin vandaag</div>
+        <div class="section-title" style="margin-bottom: 1rem;">Oefen gratis</div>
+        <p style="color: var(--grey); margin-bottom: 2rem; max-width: 420px; margin-left: auto; margin-right: auto;">Download DronePilot en probeer 5 vragen per dag — helemaal gratis. Geen account nodig, geen creditcard vereist.</p>
+        <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+            <a href="#apps" class="btn btn-amber">↓ Gratis downloaden</a>
+            <a href="mailto:sprutski@icloud.com" class="btn btn-outline">Contact</a>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="nav-logo" style="margin-bottom: 0.5rem;">
+                <div class="nav-logo-icon"><img src="../logo.jpg" alt="DronePilot Logo"></div>
+                <div class="nav-logo-text">Drone<span>Pilot</span></div>
+            </div>
+            <p>Hoogwaardige examenvoorbereidingsapps voor EASA-dronecertificeringen. Ontwikkeld in Denemarken, gebruikt in heel Europa.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Apps</h4>
+            <a href="#apps">DronePilot A1/A3</a>
+            <a href="#apps">DronePilot A2</a>
+        </div>
+        <div class="footer-col">
+            <h4>Bronnen</h4>
+            <a href="../blog/">Gidsen</a>
+            <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+            <h4>Bedrijf</h4>
+            <a href="mailto:sprutski@icloud.com">Contact</a>
+            <a href="../privacy.html">Privacy</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 APP Factory. Alle rechten voorbehouden.</p>
+        <a href="../privacy.html">Privacybeleid</a>
+    </div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('open');
+    }
+    function toggleFaq(btn) {
+        const answer = btn.nextElementSibling;
+        const isOpen = answer.classList.contains('open');
+        document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('active'));
+        if (!isOpen) {
+            answer.classList.add('open');
+            btn.classList.add('active');
+        }
+    }
+</script>
+</body>
+</html>
