@@ -1,179 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EASA A1/A3 Practice Test 2026: 5 Real Questions & Answers | DronePilot</title>
-    <meta name="description" content="Free EASA A1/A3 practice test with 5 real questions from the app. Same traps as real exam - 75% to pass. Full 40-question mock in DronePilot app.">
-    <link rel="canonical" href="https://dronepilotapp.eu/blog/easa-a1-a3-practice-test-2026.html">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
-    <style>
-        :root { --navy:#1a2340; --navy-deep:#0f1628; --navy-light:#243054; --amber:#d4943a; --white:#f4f2ef; --white-dim:#c8c4be; --grey:#8a8693; --surface:#1e2a45; --border:rgba(255,255,255,0.06); --border-light:rgba(255,255,255,0.12); --radius:16px; --green:#3ab67d; --red:#e05a5a; }
-        *{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
-        body{font-family:'Outfit',sans-serif;background:var(--navy-deep);color:var(--white);line-height:1.8;padding-bottom:90px}
-        nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(15,22,40,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
-       .nav-logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--white)}.nav-logo-icon{width:36px;height:36px;border-radius:10px;overflow:hidden}.nav-logo-icon img{width:100%;height:100%;object-fit:cover}
-       .nav-logo-text{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600}.nav-logo-text span{color:var(--amber)}
-       .nav-links{list-style:none;display:flex;gap:2rem;align-items:center}.nav-links a{color:var(--white-dim);text-decoration:none;font-size:0.88rem}
-       .nav-cta{padding:0.55rem 1.4rem!important;background:var(--amber)!important;color:var(--navy-deep)!important;border-radius:100px!important;font-weight:600!important}
-       .article{max-width:720px;margin:0 auto;padding:8rem 2rem 4rem}
-       .article h1{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:400;line-height:1.15;margin-bottom:1rem}
-       .article-meta{display:flex;gap:1.5rem;font-size:0.85rem;color:var(--grey);margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border-light)}
-       .article h2{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:400;margin-top:3rem;margin-bottom:1rem}
-       .article p{color:var(--white-dim);margin-bottom:1.25rem}.article a{color:var(--amber);text-decoration:none}
-       .article strong{color:var(--white)}
-       .cta-box{background:linear-gradient(135deg,var(--navy-light),var(--surface));border:1px solid var(--border-light);border-radius:var(--radius);padding:2rem;text-align:center;margin:2rem 0}
-        #quiz{ background:var(--surface); border:1px solid var(--border-light); border-radius:16px; padding:2rem; margin:2.5rem 0; }
-        #quiz-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
-        #quiz-progress{font-size:0.75rem;color:var(--grey);letter-spacing:0.1em;text-transform:uppercase}
-        #quiz-cat{font-size:0.75rem;color:var(--amber);background:rgba(212,148,58,0.12);padding:0.2rem 0.6rem;border-radius:100px}
-        #quiz-bar{height:4px;background:var(--border-light);border-radius:100px;margin-bottom:1.5rem;overflow:hidden} #quiz-bar-fill{height:100%;background:var(--amber);width:0%;transition:width 0.3s}
-        #quiz-q{font-size:1.1rem;font-weight:600;color:white;margin-bottom:1.5rem;line-height:1.5}
-       .opt{padding:1rem 1.2rem;border:1px solid var(--border-light);border-radius:12px;margin-bottom:0.7rem;cursor:pointer;color:var(--white-dim);transition:all 0.15s;line-height:1.4}
-       .opt:hover{border-color:var(--amber);background:rgba(212,148,58,0.07)}.opt.correct{border-color:var(--green);background:rgba(58,182,125,0.15);color:white}.opt.wrong{border-color:var(--red);background:rgba(224,90,90,0.15)}
-       .opt.disabled{pointer-events:none}
-        #quiz-explain{display:none;margin-top:1.2rem;padding:1.2rem;background:var(--navy-light);border-radius:12px;font-size:0.9rem;line-height:1.6;color:var(--white-dim)}
-        #quiz-next{display:none;margin-top:1.2rem;padding:0.8rem 1.8rem;background:var(--amber);color:var(--navy-deep);border:none;border-radius:100px;font-weight:700;cursor:pointer}
-        #quiz-result{display:none;text-align:center}
-        #sticky{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(15,22,40,0.96);backdrop-filter:blur(20px);border-top:1px solid var(--border-light);padding:0.8rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-        #sticky span{font-size:0.9rem;color:var(--white)} #sticky span b{color:var(--amber)}
-        footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center;font-size:0.85rem;color:var(--grey);max-width:720px;margin:4rem auto 0}
-        @media(max-width:640px){.nav-links{display:none}.article{padding:6rem 1.25rem 3rem}#sticky{flex-direction:column;padding:0.8rem} #sticky span{display:none}}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EASA A1/A3 Practice Test 2026: 5 Real Questions | DronePilot</title>
+<meta name="description" content="Free EASA A1/A3 practice test with 5 real questions from app.">
+<link rel="canonical" href="https://dronepilotapp.eu/blog/easa-a1-a3-practice-test-2026.html">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1a2340;--deep:#0f1628;--light:#243054;--amber:#d4943a;--white:#f4f2ef;--dim:#c8c4be;--grey:#8a8693;--surface:#1e2a45;--border:rgba(255,255,255,0.1);--green:#3ab67d;--red:#e05a5a}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Outfit,sans-serif;background:var(--deep);color:var(--white);line-height:1.7;padding-bottom:100px}
+nav{position:fixed;top:0;width:100%;padding:1rem 2rem;display:flex;justify-content:space-between;background:rgba(15,22,40,0.95);border-bottom:1px solid var(--border);z-index:10}
+.article{max-width:720px;margin:0 auto;padding:7rem 2rem 2rem}
+h1{font-family:Fraunces,serif;font-weight:400;font-size:2.2rem;line-height:1.2;margin-bottom:1rem}
+.meta{color:var(--grey);font-size:0.85rem;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+p{color:var(--dim);margin-bottom:1rem}
+.btn{display:inline-block;padding:0.9rem 2rem;background:var(--amber);color:var(--deep);border-radius:100px;font-weight:700;text-decoration:none;margin:0.3rem}
+.btn-outline{background:transparent;color:white;border:1px solid var(--border)}
+#quiz{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.8rem;margin:2rem 0}
+#qtop{display:flex;justify-content:space-between;font-size:0.75rem;color:var(--grey);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.8rem}
+#bar{height:4px;background:var(--border);border-radius:10px;margin-bottom:1.2rem;overflow:hidden}#fill{height:100%;background:var(--amber);width:0%;transition:0.3s}
+#qtext{font-weight:600;font-size:1.1rem;color:white;margin-bottom:1.2rem;line-height:1.4}
+.opt{border:1px solid var(--border);border-radius:12px;padding:0.9rem 1.1rem;margin-bottom:0.6rem;cursor:pointer;color:var(--dim)}
+.opt:hover{border-color:var(--amber);background:rgba(212,148,58,0.08)}
+.opt.correct{border-color:var(--green);background:rgba(58,182,125,0.15);color:white}
+.opt.wrong{border-color:var(--red);background:rgba(224,90,90,0.15)}
+#explain{display:none;margin-top:1rem;padding:1rem;background:var(--light);border-radius:12px;font-size:0.9rem}
+#next{display:none;margin-top:1rem;padding:0.7rem 1.6rem;background:var(--amber);color:var(--deep);border:none;border-radius:100px;font-weight:700;cursor:pointer}
+#sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(15,22,40,0.97);border-top:1px solid var(--border);padding:0.7rem 1rem;display:flex;justify-content:center;gap:1rem;align-items:center;z-index:20}
+</style>
 </head>
 <body>
-<nav>
-    <a href="../" class="nav-logo"><div class="nav-logo-icon"><img src="../logo.jpg" alt="logo"></div><div class="nav-logo-text">Drone<span>Pilot</span></div></a>
-    <ul class="nav-links"><li><a href="../#apps">Apps</a></li><li><a href="../#blog">Guides</a></li><li><a href="../#apps" class="nav-cta">Download Free</a></li></ul>
-</nav>
+<nav><div style="font-family:Fraunces,serif;font-weight:600">Drone<span style="color:var(--amber)">Pilot</span></div><a href="../#apps" class="btn" style="padding:0.5rem 1.2rem;font-size:0.85rem">Download Free</a></nav>
 
-<article class="article">
-    <h1>EASA A1/A3 Practice Test 2026: 5 Real Questions That Make 60% Fail</h1>
-    <div class="article-meta"><span>August 2026</span><span>5 real questions from app</span><span>Free mock test</span></div>
+<div class="article">
+<h1>EASA A1/A3 Practice Test: 5 Real Questions That Make 60% Fail</h1>
+<div class="meta">August 2026 • 5 questions from DronePilot app • Free</div>
 
-    <p>The EASA A1/A3 exam is 40 multiple-choice questions, 75% to pass (30/40), valid 5 years in all 31 EASA states. Sounds easy, but most pilots fail on the same 5 traps: <strong>120m measured from ground below drone, not take-off point, manned aircraft priority, LiPo fire risk, GDPR even for hobby, and thunderstorm gust fronts.</strong></p>
-    <p>This is a mini version of the real mock exam. We took 5 hard questions directly from the DronePilot app - same wording and difficulty as the real exam. Full version with 500+ questions and explanations is in the app.</p>
+<p>The A1/A3 exam is 40 questions, 30 correct to pass (75%), valid 5 years in 31 EASA states. Most fail on these exact traps. This mini-test uses 5 real questions directly from the DronePilot app.</p>
 
-    <div class="cta-box">
-        <h3 style="margin-top:0;">Full 40-question mock exam in the app</h3>
-        <p style="margin-bottom:1.2rem;">Same format as real exam, instant result, shows your weak topics. Free, offline, 5 languages.</p>
-        <div class="store-buttons" data-app="a1a3"></div>
-    </div>
-
-    <h2>Try 5 real questions from the app</h2>
-    <p>Click an answer - you get the explanation right away. This is exactly how it works in the app.</p>
-
-    <div id="quiz">
-        <div id="quiz-top"><div id="quiz-progress">QUESTION 1 OF 5</div><div id="quiz-cat"></div></div>
-        <div id="quiz-bar"><div id="quiz-bar-fill"></div></div>
-        <div id="quiz-q"></div>
-        <div id="quiz-opts"></div>
-        <div id="quiz-explain"></div>
-        <button id="quiz-next">Next →</button>
-        <div id="quiz-result">
-            <h2 id="quiz-score"></h2>
-            <p id="quiz-msg" style="color:var(--white-dim);margin-bottom:1.5rem;"></p>
-            <div class="store-buttons" data-app="a1a3"></div>
-            <p style="margin-top:1rem;font-size:0.85rem;">Want the full guide first? <a href="how-to-pass-easa-a1-a3-exam.html">Read complete A1/A3 guide</a> · <a href="a1-a3-vs-a2-difference.html">A1/A3 vs A2</a></p>
-        </div>
-    </div>
-
-    <h2>Why do people fail these?</h2>
-    <p><strong>1. 120m trap:</strong> The 120m limit follows terrain under drone, not take-off point. Taking off from a hill and flying over a valley puts you 200m above ground = illegal. This is in 80% of exams.</p>
-    <p><strong>2. Manned aircraft:</strong> Many think helicopter will see them. No. You must descend and land immediately. Manned always has right of way.</p>
-    <p><strong>3. LiPo battery:</strong> Swollen battery = internal gas = fire risk. Never fly, charge or store it. Dispose safely.</p>
-    <p><strong>4. GDPR:</strong> Even hobby pilots have data protection duties when capturing identifiable people. Saving video counts as storing personal data.</p>
-    <p><strong>5. Thunderstorm gust front:</strong> Dangerous wind can hit you kilometers ahead of visible storm. Clear sky above you doesn't mean safe.</p>
-    <p>All 9 topics (Regulations, Airspace, Human Factors, Procedures, UAS Knowledge, Meteorology, Performance, Safety, Privacy) are covered with 500+ questions in the app with detailed explanations like above.</p>
-
-    <div class="cta-box">
-        <h3>Ready for the full 40 questions?</h3>
-        <p>Take the full mock exam in DronePilot A1/A3 - free, offline, and you see which of the 9 topics you need to study.</p>
-        <div class="store-buttons" data-app="a1a3"></div>
-    </div>
-</article>
-
-<div id="sticky">
-    <span><b>Full mock exam:</b> 40 questions, 75% to pass, 500+ in app</span>
-    <div class="store-buttons" data-app="a1a3"></div>
+<div style="text-align:center;margin:1.5rem 0">
+<a href="../#apps" class="btn">Download App - Full 40 Questions Free</a><br>
+<a href="how-to-pass-easa-a1-a3-exam.html" class="btn btn-outline">Read Full A1/A3 Guide</a>
 </div>
 
-<footer>© 2026 APP Factory · <a href="../">Back to DronePilot</a></footer>
+<h2 style="font-family:Fraunces,serif;font-weight:400;margin-top:2rem">Try the 5 questions now:</h2>
 
-<script src="store-links.js"></script>
+<div id="quiz">
+<div id="qtop"><span id="progress">QUESTION 1 OF 5</span><span id="cat" style="color:var(--amber)"></span></div>
+<div id="bar"><div id="fill"></div></div>
+<div id="qtext"></div>
+<div id="opts"></div>
+<div id="explain"></div>
+<button id="next">Next →</button>
+<div id="result" style="display:none;text-align:center">
+<h2 id="score" style="font-family:Fraunces,serif;font-weight:400"></h2>
+<p id="msg" style="color:var(--dim);margin:1rem 0"></p>
+<a href="../#apps" class="btn">Get Full Mock Exam in App - Free</a>
+</div>
+</div>
+
+<p><strong>Why people fail:</strong> 120m is measured from ground below drone, not take-off. Manned aircraft always have right of way. Swollen LiPo = fire. GDPR applies even for hobby. Gust fronts hit km ahead of storm.</p>
+</div>
+
+<div id="sticky">
+<span style="font-size:0.9rem"><b style="color:var(--amber)">Full test:</b> 40 Qs in app - free</span>
+<a href="../#apps" class="btn" style="padding:0.6rem 1.4rem">Download Free</a>
+</div>
+
 <script>
 (function(){
-const questions = [
-{
-category:"Air Safety",
-q:"You take off from a hilltop. Valley floor is 80m below take-off. Drone shows 120m above launch. Are you legal?",
-opts:["No — 120m is measured from ground beneath drone, you're 200m above valley","Yes — altimeter shows 120m or less, you're legal","Yes — 120m is measured from take-off point","No — over uneven terrain max is 50m"],
-correct:0,
-exp:"The 120m limit follows terrain beneath drone, not take-off point. Launch from hill and fly over valley = illegal 200m. This traps most beginners."
-},
-{
-category:"Operational Procedures",
-q:"You're filming sunset at 100m when a low helicopter heads your way. What should you do?",
-opts:["Descend immediately and land — manned aircraft always have right of way","Climb to 120m to clear its path","Flash lights so helicopter crew spots you","Hold position — helicopter radar will detect you"],
-correct:0,
-exp:"Manned aircraft have absolute priority. Get out of the way — descend and land immediately. Never assume helicopter pilot can see your small drone."
-},
-{
-category:"UAS Knowledge",
-q:"After flight your LiPo looks slightly swollen. What should you do?",
-opts:["Normal — expands when warm, shrinks when cooled","Stop using immediately — swollen LiPo is fire hazard, dispose safely","Keep flying with shorter timer","Fully discharge and recharge to 100% to reverse swelling"],
-correct:1,
-exp:"Swollen LiPo = internal chemical decomposition producing gas. Irreversible and severe fire risk — can ignite spontaneously. Never charge or fly with it."
-},
-{
-category:"Privacy & GDPR",
-q:"You fly over beach for fun, camera captures recognisable faces. You save video but don't publish. Does GDPR apply?",
-opts:["Yes — GDPR applies to anyone capturing and storing identifiable data","No — not shared, no issue","Only if drone >250g with zoom camera","No — GDPR only for companies"],
-correct:0,
-exp:"GDPR household exemption doesn't cover recording identifiable strangers in public. Moment you capture recognisable faces, you have obligations — even if never shared."
-},
-{
-category:"Meteorology",
-q:"Thunderstorm visible 10km away, sky above you clear and calm. Safe for quick 5-min flight?",
-opts:["Yes — 10km away can't affect you","Yes — air before storm is calmest","Only if ground wind >15 km/h","No — gust fronts can produce dangerous winds km ahead of visible storm"],
-correct:3,
-exp:"Thunderstorms create massive outflow called gust front. Invisible wind wave can hit you with violent gusts even when rain is 10km away. Many crashes happen in 'clear' air near storms."
-}
+var qs=[
+{q:"You take off from a hilltop. Valley is 80m below. Drone shows 120m above launch. Legal?",c:"Air Safety",o:["No — 120m is from ground beneath drone, you're 200m above valley","Yes — altimeter shows 120m, you're legal","Yes — 120m from take-off point","No — max 50m over uneven terrain"],a:0,e:"120m follows terrain below drone, not take-off point. Hill + valley = illegal 200m."},
+{q:"Filming sunset at 100m, low helicopter heading your way. What to do?",c:"Procedures",o:["Descend immediately and land — manned always has right of way","Climb to 120m to clear it","Flash lights so helicopter sees you","Hold — helicopter radar will detect you"],a:0,e:"Manned aircraft have absolute priority. Descend and land immediately."},
+{q:"LiPo battery looks slightly swollen after flight. What to do?",c:"UAS Knowledge",o:["Normal — shrinks when cooled","Stop using immediately — fire hazard, dispose safely","Fly with shorter timer","Discharge and recharge to 100%"],a:1,e:"Swollen = gas from chemical decomposition. Irreversible fire risk."},
+{q:"Fly over beach, capture recognisable faces, save video but don't publish. GDPR?",c:"Privacy",o:["Yes — capturing/storing identifiable data = GDPR","No — not published","Only if >250g with zoom","No — only for companies"],a:0,e:"GDPR household exemption doesn't cover strangers in public. Saving = storing personal data."},
+{q:"Thunderstorm 10km away, sky above you clear. Safe for 5-min flight?",c:"Meteorology",o:["Yes — 10km can't affect you","Yes — calm before storm is best","Only if ground wind >15km/h","No — gust fronts produce dangerous winds km ahead of storm"],a:3,e:"Gust front = invisible outflow that can hit you km ahead of visible storm."}
 ];
-let idx=0, score=0;
-const qEl=document.getElementById('quiz-q'), optsEl=document.getElementById('quiz-opts'), expEl=document.getElementById('quiz-explain'), nextEl=document.getElementById('quiz-next'), progEl=document.getElementById('quiz-progress'), catEl=document.getElementById('quiz-cat'), barEl=document.getElementById('quiz-bar-fill'), resEl=document.getElementById('quiz-result');
+var idx=0,score=0;
+var qtext=document.getElementById('qtext'),opts=document.getElementById('opts'),explain=document.getElementById('explain'),next=document.getElementById('next'),prog=document.getElementById('progress'),cat=document.getElementById('cat'),fill=document.getElementById('fill'),result=document.getElementById('result');
 
 function render(){
-  const cur=questions[idx];
-  progEl.textContent=`QUESTION ${idx+1} OF ${questions.length}`;
-  catEl.textContent=cur.category;
-  barEl.style.width=`${(idx/questions.length)*100}%`;
-  qEl.textContent=cur.q;
-  optsEl.innerHTML=''; expEl.style.display='none'; nextEl.style.display='none';
-  cur.opts.forEach((t,i)=>{
-    const d=document.createElement('div'); d.className='opt'; d.textContent=t;
-    d.onclick=()=>choose(i);
-    optsEl.appendChild(d);
-  });
+var cur=qs[idx];
+prog.textContent="QUESTION "+(idx+1)+" OF "+qs.length;
+cat.textContent=cur.c;
+fill.style.width=(idx/qs.length*100)+"%";
+qtext.textContent=cur.q;
+opts.innerHTML="";explain.style.display="none";next.style.display="none";
+for(var i=0;i<cur.o.length;i++){
+var d=document.createElement('div');d.className='opt';d.textContent=cur.o[i];
+(function(i){d.onclick=function(){choose(i)}})(i);
+opts.appendChild(d);
+}
 }
 function choose(chosen){
-  const cur=questions[idx]; const all=document.querySelectorAll('.opt');
-  all.forEach(o=>{ o.classList.add('disabled'); o.onclick=null; });
-  if(chosen===cur.correct){ all[chosen].classList.add('correct'); score++; }
-  else { all[chosen].classList.add('wrong'); all[cur.correct].classList.add('correct'); }
-  expEl.innerHTML=`<strong style="color:white;">${chosen===cur.correct?'Correct!':'Wrong.'}</strong> ${cur.exp}<br><br><span style="color:var(--amber)">→ 500+ questions like this with full explanations in the app.</span>`;
-  expEl.style.display='block'; nextEl.style.display='inline-block';
-  barEl.style.width=`${((idx+1)/questions.length)*100}%`;
+var cur=qs[idx]; var all=document.querySelectorAll('.opt');
+for(var j=0;j<all.length;j++){all[j].style.pointerEvents='none'}
+if(chosen===cur.a){all[chosen].classList.add('correct');score++}
+else{all[chosen].classList.add('wrong');all[cur.a].classList.add('correct')}
+explain.innerHTML="<b style='color:white'>"+(chosen===cur.a?"Correct!":"Wrong.")+"</b> "+cur.e+"<br><br><span style='color:var(--amber)'>→ 500+ like this in app with full explanation.</span>";
+explain.style.display='block';next.style.display='inline-block';
+fill.style.width=((idx+1)/qs.length*100)+"%";
 }
-nextEl.onclick=function(){ idx++; if(idx<questions.length) render(); else finish(); };
+next.onclick=function(){idx++;if(idx<qs.length)render();else{finish()}};
+
 function finish(){
-  qEl.style.display='none'; optsEl.style.display='none'; expEl.style.display='none'; nextEl.style.display='none';
-  document.getElementById('quiz-top').style.display='none'; document.getElementById('quiz-bar').style.display='none';
-  resEl.style.display='block';
-  document.getElementById('quiz-score').textContent=`You scored ${score}/${questions.length}`;
-  let msg= score<=2? `You would FAIL real exam (need 75%). These exact traps are why 60% fail first time. Get full 500-question mock in app - it shows your weak topics.` : score<=3? `Borderline - you'd just fail. Real exam has 40 questions with trickier wording. Fix weak spots in app before paying for real exam.` : `Strong! But real exam has 40 questions. Take full mock in app to be 100% ready - free, offline.`;
-  document.getElementById('quiz-msg').textContent=msg;
+qtext.style.display='none';opts.style.display='none';explain.style.display='none';next.style.display='none';
+document.getElementById('qtop').style.display='none';document.getElementById('bar').style.display='none';
+result.style.display='block';
+document.getElementById('score').textContent="You scored "+score+"/"+qs.length;
+var msg= score<=2?"You would FAIL real exam (need 75%). These exact traps make 60% fail. Get full 500 Q mock in app.":score<=3?"Borderline - you'd just fail. Fix weak spots in app before real exam.":"Strong! Try full 40 Q mock in app to be 100% ready.";
+document.getElementById('msg').textContent=msg;
 }
 render();
 })();
